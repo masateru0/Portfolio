@@ -12,15 +12,18 @@
                     <RouterLink to="#Skills">Skills</RouterLink>
                     <RouterLink to="#Profile">Profile</RouterLink>
                 </nav>
-                <CustomButton label="Contact" customClass="contact-btn" />
+                <CustomButton
+                    tag="button"
+                    label="Contact"
+                    customClass="contact-btn"/>
             </div>
         </div>
     </header>
 </template>
 
 <script setup>
-import CustomButton from './CustomButton.vue';
-import MyIcon from './MyIcon.vue';
+import CustomButton from '@/components/CustomButton.vue';
+import MyIcon from '@/components/MyIcon.vue';
 </script>
 
 <style>
@@ -53,16 +56,18 @@ import MyIcon from './MyIcon.vue';
     font-size: 16px;
     font-weight: bold;
     color: #583C27;
+    margin-left: 1rem;
 }
 
 .right-section {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     margin-right: 1rem;
     color: #583C27;
     cursor: pointer;
@@ -88,6 +93,8 @@ import MyIcon from './MyIcon.vue';
     border: none !important;
     transition: background-color 0.3s ease !important;
     font-size: 16px !important;
+    border-radius: 20px !important;
+    padding: 0.5rem 1.5rem !important;
 }
 
 .contact-btn:hover {

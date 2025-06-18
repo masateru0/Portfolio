@@ -15,19 +15,22 @@
 
 .img-container {
     position: relative;
-    display: inline-block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 .first-view-img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .overlay-text {
     position: absolute;
-    bottom: 8%;
-    left: 13%;
+    bottom: 10%;
+    left: 10%;
     color: #583C27;
-    font-size: 1.5rem;
+    font-size: 36px;
     font-weight: bold;}
 </style>

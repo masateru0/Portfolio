@@ -9,11 +9,11 @@
 </template>
 
 <script setup>
-import MyHeader from '@/components/MyHeader.vue';
-import FirstView from '@/components/FirstView.vue';
-import AboutMe from '@/components/AboutMe.vue';
-import MyWorks from '@/components/MyWorks.vue';
-import MySkills from '@/components/MySkills.vue';
-import ContactForm from '@/components/ContactForm.vue';
-import MyFooter from '@/components/MyFooter.vue';
+import MyHeader from '@/Views/MyHeader.vue';
+import FirstView from '@/Views/FirstView.vue';
+import AboutMe from '@/Views/AboutMe.vue';
+import MyWorks from '@/Views/MyWorks.vue';
+import MySkills from '@/Views/MySkills.vue';
+import ContactForm from '@/Views/ContactForm.vue';
+import MyFooter from '@/Views/MyFooter.vue';
 </script>
