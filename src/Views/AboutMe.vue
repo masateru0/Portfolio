@@ -8,27 +8,33 @@
             <div class="text-block">
                 <p>
                     はじめまして。秋山将輝と申します。<br />
-                    未経験からWebエンジニアを目指して学習を進めており、特にHTML/ CSS / JavaScript /
+                    未経験からWebエンジニアを目指して学習を進めており、特にHTML / CSS / JavaScript /
                     Vue.js を中心に取り組んでいます。<br />
                     頭に浮かんだ構想を具体的な成果物として表現できるWeb開発に強く魅力を感じています。<br />
                     将来的にはバックエンドの技術も身につけ、フルスタックエンジニアとして幅広く活躍できるようになりたいと考えています。<br />
                     新しい技術や課題に対して前向きに取り組み、日々成長していきます。
                 </p>
 
-                <div class="my-tag">
+                <div class="link-row">
                     <MyTag label="GitHub" />
+                    <a
+                        href="https://github.com/masateru0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="github-link"
+                    >
+                        https://github.com/masateru0
+                    </a>
                 </div>
 
-                <a href="https://github.com/masateru0" target="_blank">
-                    https://github.com/masateru0
-                </a>
-
-                <CustomButton
-                    tag="RouterLink"
-                    :to="'/profile'"
-                    label="Profile"
-                    customClass="profile-btn"
-                />
+                <div class="last-btn">
+                    <CustomButton
+                        tag="router-link"
+                        :to="{ name: 'ProfilePage' }"
+                        label="Profile"
+                        customClass="profile-btn"
+                    />
+                </div>
             </div>
         </div>
     </section>
@@ -42,8 +48,8 @@ import CustomButton from '@/components/CustomButton.vue'
 
 <style scoped>
 .about-me {
-    padding: 4rem 2rem;
-    background-color: #e5e5e5;
+    padding: 3rem 2rem;
+    background-color: #F4FCFD;
 }
 
 .content {
@@ -57,8 +63,10 @@ import CustomButton from '@/components/CustomButton.vue'
 .about-img {
     width: 440px;
     height: 295px;
-    /* border-radius: 50%; */
     object-fit: cover;
+    margin-left: 200px;
+    margin-top: 7px;
+    border-radius: 10px;
 }
 
 .text-block {
@@ -67,33 +75,21 @@ import CustomButton from '@/components/CustomButton.vue'
     color: #583c27;
     font-size: 16px;
     line-height: 1.8;
+    margin-left: 120px;
+    margin-right: 150px;
 }
 
-a {
+.link-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.github-link {
+    font-size: 14px;
     color: #583c27;
-    word-break: break-all;
     text-decoration: underline;
-}
-
-.my-tag {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.profile-btn {
-    margin-top: 1rem;
-    background-color: #73d1e8;
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    display: inline-block;
-    font-size: 16px;
-    text-decoration: none;
-    transition: background-color 0.3 ease;
-}
-
-.profile-btn:hover {
-    background-color: #5bb8cc;
+    word-break: break-all;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <component :is="tag" :class="['custom-button', 'customClass']" v-bind="$attrs">
+    <component :is="tag" :to="to" :href="href" :class="customClass" class="base-btn">
         {{ label }}
     </component>
 </template>
@@ -22,18 +22,21 @@ defineProps({
 </script>
 
 <style scoped>
-.custom-button {
-    background-color: #73d1e8;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1.5rem;
-    font-size: 16px;
+.base-btn {
     cursor: pointer;
+    border: none;
+    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
-.custom-button:hover {
+.profile-btn {
+    background-color: #73d1e8;
+    color: black;
+}
+
+.profile-btn:hover {
     background-color: #5bb8cc;
 }
 </style>

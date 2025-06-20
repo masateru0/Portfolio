@@ -1,5 +1,9 @@
 <template>
-    <div></div>
+    <div>
+        <SkillGraph />
+    </div>
 </template>
 
-<script setup></script>
+<script setup>
+import SkillGraph from '@/components/SkillGraph.vue';
+</script>
