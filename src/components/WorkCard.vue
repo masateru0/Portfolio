@@ -21,12 +21,12 @@ defineProps({
 
 <style scoped>
 .work-card {
+    max-width: 300px;
+    width: 100%;
     border-radius: 5px;
     overflow: hidden;
     padding: 0;
     transition: transform 0.2s;
-    width: 1200px;
-    height: auto;
 }
 
 .work-card:hover {

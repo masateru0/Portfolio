@@ -27,7 +27,7 @@ const works = [
     {
         title: 'ポートフォリオサイト',
         description: 'Desine / Coding',
-        image: new URL('@/assets/works/portfolio1.png', import.meta.url).href
+        image: new URL('@/assets/tip.png', import.meta.url).href
     },
     {
         title: 'ポートフォリオサイト',
@@ -55,16 +55,16 @@ const works = [
 <style scoped>
 .works-section {
     background-color: #D6F2F8;
-    padding: 4rem 2rem;
+    padding: 3rem 3rem;
 }
 
 .works-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
+    justify-items: center;
+    padding: 2rem;
     max-width: 1200px;
-    margin-inline: auto;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
+    margin: 0 auto;
 }
 </style>

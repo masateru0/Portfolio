@@ -1,5 +1,5 @@
 <template>
-    <section class="about-me">
+    <section class="about-me-section">
         <ContentsText title="About me" />
 
         <div class="content">
@@ -47,7 +47,7 @@ import CustomButton from '@/components/CustomButton.vue'
 </script>
 
 <style scoped>
-.about-me {
+.about-me-section {
     padding: 3rem 2rem;
     background-color: #F4FCFD;
 }

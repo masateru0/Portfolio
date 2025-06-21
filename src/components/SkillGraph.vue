@@ -19,7 +19,7 @@ onMounted(() => {
             datasets: [
                 {
                     label: 'スキルレベル',
-                    data: [8, 6, 5, 4, 3, 5, 7, 8],
+                    data: [8, 8, 7.5, 7.5, 7, 0, 0, 9],
                     backgroundColor: 'rgba(54, 162, 235, 0.3)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     pointBackgroundColor: 'rgba(54, 162, 235, 1)',
