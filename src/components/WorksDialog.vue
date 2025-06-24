@@ -1,0 +1,131 @@
+<template>
+    <el-dialog
+        v-model="internalVisible"
+        width="900px"
+        class="works-dialog"
+        :close-on-click-modal="false"
+        @close="handleClose"
+    >
+        <div class="dialog-content">
+            <div class="left-column">
+                <ContentsText title="Porfolio" />
+                <p class="description">{{ description }}</p>
+                <div class="tags">
+                    <MyTag v-for="(tag, index) in tags" :key="index" :label="tag" />
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="thumbnails">
+                    <img
+                        v-for="(imgSrc, index) in images"
+                        :key="index"
+                        :src="imgSrc"
+                        class="thumbnail"
+                        :class="{ selected: selectedImage === imgSrc }"
+                        @click="selectImage(imgSrc)"
+                    />
+                </div>
+                <ImageOut :src="selectedImage" class="main-image" />
+            </div>
+        </div>
+
+        <template #footer>
+            <el-button @click="handleClose">閉じる</el-button>
+        </template>
+    </el-dialog>
+</template>
+
+<script setup>
+import { ref, watch } from 'vue'
+import ContentsText from '@/components/ContentsText.vue'
+import MyTag from '@/components/MyTag.vue'
+import ImageOut from '@/components/ImageOut.vue'
+
+const props = defineProps({
+    visible: Boolean,
+    title: String,
+    description: String,
+    image: String,
+    tags: Array,
+    images: Array
+})
+
+const emit = defineEmits(['update:visible'])
+
+const internalVisible = ref(props.visible)
+const selectedImage = ref(props.image)
+
+watch(
+    () => props.visible,
+    (val) => {
+        internalVisible.value = val
+        selectedImage.value = props.image
+    },
+)
+
+watch(internalVisible, (val) => {
+    emit('update:visible', val)
+})
+
+const handleClose = () => {
+    internalVisible.value = false
+}
+
+const selectImage = (img) => {
+    selectedImage.value = img
+}
+</script>
+
+<style scoped>
+.works-dialog {
+    border-radius: 8px;
+}
+
+.dialog-content {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.left-column {
+    flex: 1;
+}
+
+.description {
+    font-size: 14px;
+    margin: 1rem 0;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail.selected {
+    border-color: #73d1e8;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>

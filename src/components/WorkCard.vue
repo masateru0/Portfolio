@@ -1,5 +1,5 @@
 <template>
-    <el-card class="work-card" shadow="hover" style="max-width: 300px">
+    <el-card class="work-card" shadow="hover" @click="$emit('click')">
         <template #header>
             <div class="card-header">
                 <h3 class="work-title">{{ title }}</h3>
