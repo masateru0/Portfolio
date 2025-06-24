@@ -1,10 +1,10 @@
 <template>
     <MyHeader />
     <FirstView />
-    <AboutMe />
-    <MyWorks />
-    <MySkills />
-    <ContactForm />
+    <section id="about"><AboutMe /></section>
+    <section id="works"><MyWorks /></section>
+    <section id="skills"><MySkills /></section>
+    <section id="contact"><ContactForm /></section>
     <MyFooter />
 </template>
 

@@ -3,13 +3,19 @@ import TopPage from '@/Pages/TopPage.vue'
 import ProfilePage from '@/Pages/ProfilePage.vue'
 
 const routes = [
-    {name: 'Top', component:TopPage, path: '/'},
-    {name: 'Profile', component: ProfilePage, path: '/profile'}
+    { path: '/', component:TopPage },
+    { path: '/profile', component: ProfilePage }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior(to) {
+        if (to.hash) {
+            return { el: to.hash, behavior: 'smooth' }
+        }
+        return { top: 0 }
+    }
 })
 
 export default router

@@ -30,7 +30,7 @@
                 <div class="last-btn">
                     <CustomButton
                         tag="router-link"
-                        :to="{ name: 'ProfilePage' }"
+                        :to="'/profile'"
                         label="Profile"
                         customClass="profile-btn"
                     />

@@ -7,10 +7,11 @@
             </div>
             <div class="right-section">
                 <nav class="nav-links">
-                    <RouterLink to="#about">About</RouterLink>
-                    <RouterLink to="#Works">Works</RouterLink>
-                    <RouterLink to="#Skills">Skills</RouterLink>
-                    <RouterLink to="#Profile">Profile</RouterLink>
+                    <a href="#about">About</a>
+                    <a href="#works">Works</a>
+                    <a href="#skills">Skills</a>
+                    <RouterLink to="/profile">Profile</RouterLink>
+                    <a href="#contact">Contact</a>
                 </nav>
                 <CustomButton
                     tag="button"

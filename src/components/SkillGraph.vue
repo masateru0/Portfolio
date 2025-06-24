@@ -34,6 +34,18 @@ onMounted(() => {
                     ticks: { stepSize: 2 },
                 },
             },
+            plugins: {
+                legend: {
+                    display: true,
+                },
+                tooltip: {
+                    enabled: true,
+                }
+            },
+            layout: {
+                padding: 10,
+            },
+            backgroundColor: '#F4FCFD',
         },
     })
 })
