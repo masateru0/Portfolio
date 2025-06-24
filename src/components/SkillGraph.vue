@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 350px; margin: 40px auto; background: #f7feff">
+    <div style="width: 350px; margin: 40px auto; background: #f4fcfd">
         <canvas ref="radarRef" width="300" height="300"></canvas>
     </div>
 </template>

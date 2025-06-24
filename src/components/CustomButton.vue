@@ -1,5 +1,12 @@
 <template>
-    <component :is="tag" :to="to" :href="href" :class="customClass" class="base-btn">
+    <component
+        :is="tag"
+        :to="to"
+        :href="href"
+        @click="$emit('click')"
+        :class="customClass"
+        class="base-btn"
+    >
         {{ label }}
     </component>
 </template>
@@ -19,6 +26,8 @@ defineProps({
         default: '',
     },
 })
+
+defineEmits(['click'])
 </script>
 
 <style scoped>
