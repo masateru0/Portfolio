@@ -1,10 +1,12 @@
 <template>
-    <ContentsText title="Profile" />
-
-    <ProfileCard />
+        <ContentsText title="Profile" />
+        <ProfileCard />
 </template>
 
 <script setup>
-import ContentsText from '@/components/ContentsText.vue';
-import ProfileCard from '@/components/ProfileCard.vue';
+import ContentsText from '@/components/ContentsText.vue'
+import ProfileCard from '@/components/ProfileCard.vue'
 </script>
+
+<style scoped>
+</style>

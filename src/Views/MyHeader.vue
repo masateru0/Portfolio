@@ -10,13 +10,14 @@
                     <a href="#about">About</a>
                     <a href="#works">Works</a>
                     <a href="#skills">Skills</a>
-                    <RouterLink to="/profile">Profile</RouterLink>
-                    <a href="#contact">Contact</a>
+                    <RouterLink :to="{ name: 'ProfilePage' }">Profile</RouterLink>
                 </nav>
                 <CustomButton
                     tag="button"
                     label="Contact"
-                    customClass="contact-btn"/>
+                    customClass="contact-btn"
+                    @click="scrollToContact"
+                />
             </div>
         </div>
     </header>
@@ -25,6 +26,13 @@
 <script setup>
 import CustomButton from '@/components/CustomButton.vue';
 import MyIcon from '@/components/MyIcon.vue';
+
+const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+}
 </script>
 
 <style>
@@ -66,26 +74,20 @@ import MyIcon from '@/components/MyIcon.vue';
     gap: 1.5rem;
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    margin-right: 1rem;
-    color: #583C27;
-    cursor: pointer;
-}
-
-.nav-links :hover {
-    text-decoration: underline;
-    color: #5BB8CC;
-}
-
-
-.nav-links a {
+.nav-links a,
+.nav-links .router-link-active {
     text-decoration: none;
-    color: #000;
+    color: #583C27;
     font-weight: 500;
-    transition: color 0.3s ease;
-    cursor: pointer;
+    transition: color 0.3 ease;
+    margin-right: 1rem;
+    gap: 2rem;
+}
+
+.nav-links a:hover,
+.nav-links .router-link-active:hover {
+    color: #5BB8CC;
+    text-decoration: underline;
 }
 
 .contact-btn {

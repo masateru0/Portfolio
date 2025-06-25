@@ -13,3 +13,16 @@
         </p>
     </div>
 </template>
+
+<script setup>
+</script>
+
+<style scoped>
+div {
+    background-color: #F4FCFD;
+}
+
+p, h1 {
+    margin-bottom: 0;
+}
+</style>

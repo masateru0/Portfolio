@@ -3,8 +3,8 @@ import TopPage from '@/Pages/TopPage.vue'
 import ProfilePage from '@/Pages/ProfilePage.vue'
 
 const routes = [
-    { path: '/', component:TopPage },
-    { path: '/profile', component: ProfilePage }
+    { path: '/', name: 'TopPage', component:TopPage },
+    { path: '/profile', name: 'ProfilePage', component: ProfilePage }
 ]
 
 const router = createRouter({

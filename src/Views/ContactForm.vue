@@ -1,5 +1,5 @@
 <template>
-    <section class="form-section">
+    <section id="contact" class="form-section">
         <ContentsText title="Contact" />
 
         <el-form :model="form" label-position="top" class="contact-form">
