@@ -121,10 +121,26 @@ const skills = [
 
 .skill-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 20px;
+    max-width: 900px;
     margin: 0 auto;
-    justify-items: center;
+    justify-items: stretch;
+    background: #F4FCFD;
+    padding: 2rem 0;
+}
+@media (max-width: 1024px) {
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 24px;
+        max-width: 650px;
+    }
+}
+@media (max-width: 700px) {
+    .skill-grid {
+        grid-template-columns: 1fr;
+        gap: 28px 0;
+        max-width: 95vw;
+    }
 }
 </style>

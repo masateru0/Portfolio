@@ -1,4 +1,5 @@
 <template>
+    <div class="profile-end">
     <div class="end-title">
         <h1>エンジニアリングへの想い</h1>
     </div>
@@ -12,17 +13,19 @@
             まだまだ至らない点はたくさんありますが、時代に合わせた技術を追いかけつつ、クライアントに寄り添ったエンジニアリングができるよう、心がけていきます。
         </p>
     </div>
+</div>
 </template>
 
 <script setup>
 </script>
 
 <style scoped>
-div {
+.profile-end {
     background-color: #F4FCFD;
 }
 
-p, h1 {
-    margin-bottom: 0;
+h1 {
+    text-align: center;
 }
+
 </style>

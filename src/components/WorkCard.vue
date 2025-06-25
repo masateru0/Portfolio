@@ -31,7 +31,7 @@ defineProps({
 }
 .work-img {
     width: 100%;
-    height: 240px;
+    height: 250px;
     background: #d3d3d3;
     border-radius: 8px;
     margin-bottom: 16px;
