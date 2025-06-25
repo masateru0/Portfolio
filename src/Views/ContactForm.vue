@@ -105,13 +105,13 @@ const handleSubmit = () => {
 
 .required-label,
 .optional-label {
-    display: inline-block;
-    font-size: 10px;
     color: white;
-    padding: 1px 5px ;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background-color: #f4fcfd;
     border-radius: 4px;
-    margin-left: 0.3rem;
-    vertical-align: middle;
+    font-size: 12px;
+    line-height: 1;
 }
 
 .required-label {

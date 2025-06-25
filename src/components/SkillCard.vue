@@ -9,7 +9,7 @@
             <p class="skill-description">{{ description }}</p>
             <div class="stars">
                 <el-icon v-for="i in 5" :key="i" class="star" :class="{ active: i <= rating }">
-                    <Star />
+                    <StarFilled />
                 </el-icon>
             </div>
         </div>
@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { Star } from '@element-plus/icons-vue'
+import { StarFilled } from '@element-plus/icons-vue'
 
 defineProps({
     title: String,
@@ -35,8 +35,12 @@ defineProps({
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: 0 !important;
     overflow: hidden;
+}
+
+.el-card__body {
+    padding: 0 !important;
 }
 
 .skill-header {
