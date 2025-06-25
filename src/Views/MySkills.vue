@@ -109,6 +109,9 @@ const skills = [
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    max-width: 1200px;
+    margin: 2rem auto 1rem auto;
+    padding-left: 2.5rem;
 }
 
 .tip h6 {

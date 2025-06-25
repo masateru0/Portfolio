@@ -1,6 +1,6 @@
 <template>
     <section class="works-section">
-        <ContentsText title="Works" />
+        <ContentsText title="Works" class="works-title"/>
 
         <div class="works-grid">
             <WorkCard
@@ -89,6 +89,10 @@ const openDialog = (work) => {
 </script>
 
 <style scoped>
+.works-title {
+    background-color: #d6f2f8;
+}
+
 .works-section {
     background-color: #d6f2f8;
     padding: 3rem 3rem;
@@ -97,9 +101,9 @@ const openDialog = (work) => {
 .works-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    gap: 0; /* グリッドアイテム同士の余白をなくす */
     justify-items: center;
-    padding: 2rem;
+    padding: 0; /* グリッド全体の内側の余白もなくす */
     max-width: 1200px;
     margin: 0 auto;
 }
