@@ -12,9 +12,9 @@
             </div>
             <div class="right-section">
                 <nav class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#works">Works</a>
-                    <a href="#skills">Skills</a>
+                    <RouterLink :to="{ name: 'TopPage', hash: '#about' }">About</RouterLink>
+                    <RouterLink :to="{ name: 'TopPage', hash: '#works' }">Works</RouterLink>
+                    <RouterLink :to="{ name: 'TopPage', hash: '#skills' }">Skills</RouterLink>
                     <RouterLink :to="{ name: 'ProfilePage' }">Profile</RouterLink>
                 </nav>
                 <CustomButton
@@ -31,11 +31,15 @@
 <script setup>
 import CustomButton from '@/components/CustomButton.vue'
 import MyIcon from '@/components/MyIcon.vue'
+import { useRouter } from 'vue-router'
 
 const scrollToContact = () => {
     const contactSection = document.getElementById('contact')
     if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' })
+    } else {
+        const router = useRouter()
+        router.push({ name: 'TopPage', hash: '#contact' })
     }
 }
 </script>
