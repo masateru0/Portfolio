@@ -111,7 +111,7 @@ const skills = [
     gap: 0.5rem;
     max-width: 1200px;
     margin: 2rem auto 1rem auto;
-    padding-left: 3rem;
+    padding-left: 150px;
 }
 
 .tip h6 {
