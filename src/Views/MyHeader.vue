@@ -2,8 +2,13 @@
     <header class="header">
         <div class="container">
             <div class="left-section">
-                <MyIcon />
-                <div class="logo">Akiyama Masateru Portfolio</div>
+                <RouterLink :to="{ name: 'TopPage' }">
+                    <MyIcon />
+                </RouterLink>
+
+                <RouterLink :to="{ name: 'TopPage' }" class="logo">
+                    Akiyama Masateru portfolio
+                </RouterLink>
             </div>
             <div class="right-section">
                 <nav class="nav-links">
@@ -24,8 +29,8 @@
 </template>
 
 <script setup>
-import CustomButton from '@/components/CustomButton.vue';
-import MyIcon from '@/components/MyIcon.vue';
+import CustomButton from '@/components/CustomButton.vue'
+import MyIcon from '@/components/MyIcon.vue'
 
 const scrollToContact = () => {
     const contactSection = document.getElementById('contact')
@@ -37,7 +42,7 @@ const scrollToContact = () => {
 
 <style>
 .header {
-    background-color: #F4FCFD;
+    background-color: #f4fcfd;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -64,8 +69,14 @@ const scrollToContact = () => {
 .logo {
     font-size: 16px;
     font-weight: bold;
-    color: #583C27;
+    color: #583c27;
     margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #8b4513;
 }
 
 .right-section {
@@ -77,7 +88,7 @@ const scrollToContact = () => {
 .nav-links a,
 .nav-links .router-link-active {
     text-decoration: none;
-    color: #583C27;
+    color: #583c27;
     font-weight: 500;
     transition: color 0.3 ease;
     margin-right: 1rem;
@@ -86,12 +97,12 @@ const scrollToContact = () => {
 
 .nav-links a:hover,
 .nav-links .router-link-active:hover {
-    color: #5BB8CC;
+    color: #5bb8cc;
     text-decoration: underline;
 }
 
 .contact-btn {
-    background-color: #73D1E8 !important;
+    background-color: #73d1e8 !important;
     color: white !important;
     border: none !important;
     transition: background-color 0.3s ease !important;
@@ -101,7 +112,7 @@ const scrollToContact = () => {
 }
 
 .contact-btn:hover {
-    background-color: #5BB8CC !important;
+    background-color: #5bb8cc !important;
     color: white !important;
 }
 </style>
