@@ -86,7 +86,6 @@ const scrollToContact = () => {
 .right-section {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
 }
 
 .nav-links a,
@@ -95,7 +94,7 @@ const scrollToContact = () => {
     color: #583c27;
     font-weight: 500;
     transition: color 0.3 ease;
-    margin-right: 1rem;
+    margin-right: 34px;
     gap: 2rem;
 }
 
