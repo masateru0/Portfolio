@@ -1,14 +1,14 @@
 <template>
-    <section class="profile-section">
+    <div class="profile-section">
         <div class="my-profile">
-            <ContentsText title="Profile" class="profile-title" />
-            <ProfileCard />
+            <LeftContentsText title="Profile" class="profile-title" />
+            <ProfileCard class="profile-card"/>
         </div>
-    </section>
+    </div>
 </template>
 
 <script setup>
-import ContentsText from '@/components/ContentsText.vue'
+import LeftContentsText from '@/components/LeftContentsText.vue'
 import ProfileCard from '@/components/ProfileCard.vue'
 </script>
 
@@ -18,7 +18,15 @@ import ProfileCard from '@/components/ProfileCard.vue'
 }
 
 .profile-title {
-    padding: 3rem 2rem;
+    padding: 68px 0;
     background-color: #f4fcfd;
+}
+
+.my-profile {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 2rem 2rem 118px 2rem;
+    display: flex;
+    flex-direction: column;
 }
 </style>

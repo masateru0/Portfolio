@@ -8,7 +8,7 @@
     >
         <div class="dialog-content">
             <div class="left-column">
-                <DialogContentsText title="Portfolio" class="dialog-title" />
+                <LeftContentsText title="Portfolio" class="dialog-title" />
                 <p class="dialog-text">{{ dialogText }}</p>
                 <div class="tags">
                     <MyTag v-for="(tag, index) in tags" :key="index" :label="tag" />
@@ -38,7 +38,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import DialogContentsText from '@/components/DialogContentsText.vue'
+import LeftContentsText from '@/components/LeftContentsText.vue'
 import MyTag from '@/components/MyTag.vue'
 import ImageOut from '@/components/ImageOut.vue'
 

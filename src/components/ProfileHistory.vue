@@ -78,6 +78,7 @@ const timeline = [
     background: #F4FCFD;
     min-height: 100vh;
     padding: 0;
+    padding-bottom: 216px;
 }
 .timeline-outer {
     position: relative;
