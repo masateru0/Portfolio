@@ -30,7 +30,7 @@
             <el-form-item>
                 <div class="form-label">
                     <label>お問い合わせ内容</label>
-                    <span class="required-label">必須</span>
+                    <span class="optional-label">任意</span>
                 </div>
                 <el-input v-model="form.message" type="textarea" rows="5" />
             </el-form-item>
