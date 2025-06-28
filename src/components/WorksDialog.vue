@@ -1,15 +1,15 @@
 <template>
     <el-dialog
         v-model="internalVisible"
-        width="900px"
+        width="1180px"
         class="works-dialog"
         :close-on-click-modal="false"
         @close="handleClose"
     >
         <div class="dialog-content">
             <div class="left-column">
-                <ContentsText title="Porfolio" />
-                <p class="description">{{ description }}</p>
+                <DialogContentsText title="Portfolio" class="dialog-title" />
+                <p class="dialog-text">{{ dialogText }}</p>
                 <div class="tags">
                     <MyTag v-for="(tag, index) in tags" :key="index" :label="tag" />
                 </div>
@@ -38,7 +38,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import ContentsText from '@/components/ContentsText.vue'
+import DialogContentsText from '@/components/DialogContentsText.vue'
 import MyTag from '@/components/MyTag.vue'
 import ImageOut from '@/components/ImageOut.vue'
 
@@ -46,9 +46,10 @@ const props = defineProps({
     visible: Boolean,
     title: String,
     description: String,
+    dialogText: String,
     image: String,
     tags: Array,
-    images: Array
+    images: Array,
 })
 
 const emit = defineEmits(['update:visible'])
@@ -60,7 +61,11 @@ watch(
     () => props.visible,
     (val) => {
         internalVisible.value = val
-        selectedImage.value = props.image
+
+        selectedImage.value =
+            Array.isArray(props.images) && props.images.length > 0
+            ? props.images[0]
+            : ''
     },
 )
 
@@ -79,28 +84,42 @@ const selectImage = (img) => {
 
 <style scoped>
 .works-dialog {
-    border-radius: 8px;
+    border-radius: 12px;
+    padding: 1rem;
 }
 
 .dialog-content {
     display: flex;
     gap: 2rem;
     padding: 1rem 0;
+    margin-top: 23px;
 }
+
+.dialog-title {
+    background-color: transparent;
+}
+
 
 .left-column {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 59px;
 }
 
-.description {
+.dialog-text {
     font-size: 14px;
-    margin: 1rem 0;
+    line-height: 1.8;
+    color: #333;
+    margin: 48px 0;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 120px;
 }
 
 .right-column {
@@ -108,6 +127,14 @@ const selectImage = (img) => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    margin-right: 57px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .thumbnail {
@@ -121,11 +148,5 @@ const selectImage = (img) => {
 
 .thumbnail.selected {
     border-color: #73d1e8;
-}
-
-.main-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
 }
 </style>

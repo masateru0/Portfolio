@@ -1,6 +1,6 @@
 <template>
     <div class="work-card" @click="$emit('click')">
-        <div class="work-img"></div>
+        <img :src="image" alt="Work Image" class="work-img" />
         <div class="work-info">
             <div class="work-title">{{ title }}</div>
             <div class="work-description">{{ description }}</div>
@@ -16,7 +16,7 @@ defineProps({
 </script>
 <style scoped>
 .work-card {
-    max-width: 320px;
+    max-width: 370px;
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -26,16 +26,15 @@ defineProps({
     border: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     cursor: pointer;
 }
 .work-img {
     width: 100%;
     height: 250px;
-    background: #d3d3d3;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 16px;
-    object-fit: cover;
     display: block;
 }
 .work-info {
