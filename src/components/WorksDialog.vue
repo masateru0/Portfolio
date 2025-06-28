@@ -8,7 +8,7 @@
     >
         <div class="dialog-content">
             <div class="left-column">
-                <LeftContentsText title="Portfolio" class="dialog-title" />
+                <LeftContentsText :title="title" class="dialog-title" />
                 <p class="dialog-text">{{ dialogText }}</p>
                 <div class="tags">
                     <MyTag v-for="(tag, index) in tags" :key="index" :label="tag" />
