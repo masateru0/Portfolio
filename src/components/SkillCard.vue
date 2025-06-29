@@ -22,7 +22,7 @@ defineProps({
 </script>
 <style scoped>
 .skill-card {
-    background-color: #d6f2f8;
+    background-color: #fff;
     width: 100%;
     max-width: 320px;
     height: 250px;
@@ -32,10 +32,13 @@ defineProps({
     padding: 0;
     overflow: hidden;
     box-shadow: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 .skill-header {
-    background-color: #73d1e8;
+    background-color: #F0F2F3;
     padding: 0.5rem 1.2rem 0 1.2rem;
+    text-align: center;
+
 }
 .skill-title {
     font-size: 2rem;
@@ -43,7 +46,7 @@ defineProps({
     color: #583c27;
     margin-bottom: 0.2rem;
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 .skill-icon {
     width: 48px;
@@ -53,15 +56,18 @@ defineProps({
 }
 .description-area {
     padding: 0.7rem 1.2rem 1.2rem 1.2rem;
-    text-align: left;
+    text-align: center;
 }
 .skill-description {
     font-size: 15px;
     color: #222;
     margin-bottom: 0.7rem;
-    text-align: left;
+    text-align: center;
     min-height: 4.8em;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .stars {
     display: flex;
@@ -69,6 +75,8 @@ defineProps({
     font-size: 1.4rem;
     color: #ccc;
     margin-left: 0;
+    justify-content: center;
+    align-items: center;
 }
 .star {
     color: #ccc;

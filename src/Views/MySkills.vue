@@ -12,20 +12,21 @@
 
         <SkillGraph />
 
-        <div class="tip">
-            <ToolTip />
-            <h6>星の指標</h6>
-        </div>
-
-        <div class="skill-grid">
-            <SkillCard
-                v-for="(skill, index) in skills"
-                :key="index"
-                :title="skill.title"
-                :icon="skill.icon"
-                :description="skill.description"
-                :rating="skill.rating"
-            />
+        <div class="skill-card-style">
+            <div class="tip">
+                <ToolTip />
+                <p>星の指標</p>
+            </div>
+            <div class="skill-grid">
+                <SkillCard
+                    v-for="(skill, index) in skills"
+                    :key="index"
+                    :title="skill.title"
+                    :icon="skill.icon"
+                    :description="skill.description"
+                    :rating="skill.rating"
+                />
+            </div>
         </div>
     </section>
 </template>
@@ -97,8 +98,12 @@ const skills = [
 
 <style scoped>
 .skills-section {
-    padding: 3rem 3rem;
-    background-color: #f4fcfd;
+    background-color: #f0f2f3;
+    padding-bottom: 120px;
+}
+
+.skills-section :deep(.contents-text) {
+    background-color: #f0f2f3;
 }
 
 .skill-text {
@@ -107,16 +112,15 @@ const skills = [
 
 .tip {
     display: flex;
-    align-items: center;
     gap: 0.5rem;
     max-width: 1200px;
-    margin: 2rem auto 1rem auto;
-    padding-left: 150px;
+    margin-left: 60px;
+    align-items: center;
 }
 
-.tip h6 {
+.tip p {
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .skill-grid {
@@ -126,9 +130,24 @@ const skills = [
     max-width: 900px;
     margin: 0 auto;
     justify-items: stretch;
-    background: #F4FCFD;
+    background: #fff;
     padding: 2rem 0;
 }
+
+.skill-card-style {
+    width: 100%;
+    max-width: 1151px;
+    min-width: 904px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 3rem 4rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 1024px) {
     .skill-grid {
         grid-template-columns: repeat(2, 1fr);

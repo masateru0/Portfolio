@@ -197,7 +197,7 @@ const handleSubmit = (event) => {
 <style scoped>
 .form-section {
     background-color: #f4fcfd;
-    padding: 4rem 2rem;
+    padding: 100px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,8 +221,8 @@ const handleSubmit = (event) => {
 
 .contact-form.card-style {
     width: 100%;
-    max-width: 900px;
-    min-width: 350px;
+    max-width: 1151px;
+    min-width: 904px;
     height: auto;
     background-color: #fff;
     border-radius: 10px;
@@ -231,7 +231,6 @@ const handleSubmit = (event) => {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
 }
 
 .el-input,
