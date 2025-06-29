@@ -29,7 +29,7 @@ import FooterButton from '@/components/FooterButton.vue'
 }
 
 .thank-you {
-    color: #583c27;
+    color: #2C2C33;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -37,6 +37,6 @@ import FooterButton from '@/components/FooterButton.vue'
 
 .copyright {
     font-size: 12px;
-    color: #583c27;
+    color: #2C2C33;
 }
 </style>

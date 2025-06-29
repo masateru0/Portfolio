@@ -135,7 +135,7 @@ const timeline = [
 .timeline-year {
     font-size: 2.1em;
     font-weight: bold;
-    color: #583C27;
+    color: #2C2C33;
     line-height: 1.1;
 }
 .timeline-month {
@@ -153,11 +153,11 @@ const timeline = [
     font-size: 1.1em;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #583C27;
+    color: #2C2C33;
 }
 .timeline-body {
     font-size: 0.98em;
-    color: #583C27;
+    color: #2C2C33;
     line-height: 1.8;
 }
 @media (max-width: 900px) {

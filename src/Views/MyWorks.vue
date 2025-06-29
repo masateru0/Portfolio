@@ -135,22 +135,32 @@ const openDialog = (work) => {
     background-color: #d6f2f8;
 }
 
+.works-section :deep(.works-title) {
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 71px;
+    margin-left: 141px;
+}
+
 .works-section {
     padding-bottom: 4rem;
 }
 
 .works-title {
-    padding: 3rem 2rem;
+    padding-top: 117px;
 }
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     gap: 48px 20px;
     max-width: 900px;
-    margin: 0 auto;
     justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto 122px;
 }
+
 @media (max-width: 1024px) {
     .works-grid {
         grid-template-columns: repeat(2, 1fr);

@@ -72,7 +72,7 @@ import CustomButton from '@/components/CustomButton.vue'
 .text-block {
     flex: 1;
     min-width: 300px;
-    color: #583c27;
+    color: #2C2C33;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -102,7 +102,7 @@ p {
 
 .github-link {
     font-size: 14px;
-    color: #583c27;
+    color: #2C2C33;
     text-decoration: underline;
     word-break: break-word;
 }

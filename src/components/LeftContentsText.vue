@@ -32,6 +32,6 @@ defineProps({
 .title {
     font-size: 40px;
     font-weight: bold;
-    color: #583C27;
+    color: #2C2C33;
 }
 </style>

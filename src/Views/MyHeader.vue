@@ -74,7 +74,7 @@ const scrollToContact = () => {
 .logo {
     font-size: 16px;
     font-weight: bold;
-    color: #583c27;
+    color: #2C2C33;
     margin-left: 1rem;
     cursor: pointer;
     text-decoration: none;
@@ -92,7 +92,7 @@ const scrollToContact = () => {
 .nav-links a,
 .nav-links .router-link-active {
     text-decoration: none;
-    color: #583c27;
+    color: #2C2C33;
     font-weight: 500;
     transition: color 0.3 ease;
     margin-right: 34px;

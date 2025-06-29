@@ -43,7 +43,7 @@ defineProps({
 .skill-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #583c27;
+    color: #2C2C33;
     margin-bottom: 0.2rem;
     margin-top: 0;
     text-align: center;
