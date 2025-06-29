@@ -2,9 +2,9 @@
     <section id="contact" class="form-section">
         <el-form :model="form" label-position="top" class="contact-form card-style">
             <ContentsText title="Contact" class="contact-title" />
-            
-            <el-form-item>
-                <div class="form-label">
+
+            <el-form-item class="form-row">
+                <div class="form-label-col">
                     <label>お名前</label>
                     <span class="required-label">必須</span>
                 </div>
@@ -17,36 +17,36 @@
             </el-form-item>
             <hr class="divider" />
 
-            <el-form-item>
-                <div class="form-label">
+            <el-form-item class="form-row">
+                <div class="form-label-col">
                     <label>メールアドレス</label>
                     <span class="required-label">必須</span>
                 </div>
                 <el-input
                     v-model="form.email"
-                    placeholder="例）your-email@example.com"
+                    placeholder="例）your-mail@exsample.com"
                     size="large"
                     class="fixed-input"
                 />
             </el-form-item>
             <hr class="divider" />
 
-            <el-form-item>
-                <div class="form-label">
+            <el-form-item class="form-row">
+                <div class="form-label-col">
                     <label>電話番号</label>
                     <span class="optional-label">任意</span>
                 </div>
                 <el-input
                     v-model="form.phone"
-                    placeholder="例）080xxxxxxxx"
+                    placeholder="例）090xxxxxxxx"
                     size="large"
                     class="fixed-input"
                 />
             </el-form-item>
             <hr class="divider" />
 
-            <el-form-item>
-                <div class="form-label">
+            <el-form-item class="form-row">
+                <div class="form-label-col">
                     <label>お問い合わせ内容</label>
                     <span class="optional-label">任意</span>
                 </div>
@@ -58,7 +58,6 @@
                     class="fixed-textarea"
                 />
             </el-form-item>
-
 
             <div class="submit-btn-wrapper">
                 <CustomButton
@@ -118,12 +117,18 @@ const handleSubmit = () => {
 }
 
 .contact-form.card-style {
-    width: 1150px;
-    height: 900px;
+    width: 100%;
+    max-width: 900px;
+    min-width: 350px;
+    height: auto;
     background-color: #fff;
     border-radius: 10px;
     padding: 3rem 4rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .el-input,
@@ -133,43 +138,108 @@ const handleSubmit = () => {
 
 .divider {
     border: none;
-    border-top: 1px solid #999;
+    border-top: 1px solid #ccc;
+    background: #ccc;
+    color: #ccc;
     margin: 1.5rem 0;
-    width: 540px;
+    width: 100%;
+    max-width: 700px;
 }
 
 .el-form-item {
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form-label {
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 2.2rem auto;
+    gap: 2rem;
+}
+
+.form-label-col {
+    min-width: 240px;
+    max-width: 240px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    gap: 15px;
+    font-weight: normal;
     font-size: 14px;
-    color: #333;
+    color: #222;
+    letter-spacing: 0.02em;
+    justify-content: flex-start;
+    margin-top: 8px;
 }
 
-.required-label,
-.optional-label {
-    color: white;
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    background-color: #f4fcfd;
-    border-radius: 4px;
-    font-size: 12px;
-    line-height: 1;
-    width: 40px;
+.fixed-input {
+    flex: 1;
+    height: 56px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    margin-left: 0;
+    margin-right: 0;
+    width: 540px;
+}
+
+.fixed-input:focus {
+    border-color: #73d1e8;
+    outline: none;
+}
+
+.fixed-textarea {
+    flex: 1;
+    height: 170px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    resize: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 540px;
+}
+
+.fixed-textarea:focus {
+    border-color: #73d1e8;
+    outline: none;
+}
+
+.fixed-input::placeholder,
+.fixed-textarea::placeholder {
+    font-size: 14px;
+    color: #bbb;
 }
 
 .required-label {
     background-color: #eb8787;
+    color: #fff;
+    display: inline-block;
+    padding: 0.18rem 0.7rem 0.18rem 0.7rem;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: normal;
+    letter-spacing: 0.05em;
 }
 
 .optional-label {
     background-color: #cbc5c5;
+    color: #fff;
+    display: inline-block;
+    padding: 0.18rem 0.7rem 0.18rem 0.7rem;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: normal;
+    letter-spacing: 0.05em;
 }
 
 .submit-btn-wrapper {
@@ -191,15 +261,20 @@ const handleSubmit = () => {
     background-color: #5bb8cc;
 }
 
-.fixed-input, .fixed-textarea {
-    width: 540px
-}
-
-.fixed-input {
-    height: 56px;
-}
-
-.fixed-textarea {
-    height: 170px;
+@media (max-width: 900px) {
+    .contact-form.card-style {
+        padding: 2rem 1rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+    .form-label-col {
+        min-width: unset;
+        max-width: unset;
+        font-size: 16px;
+        margin-bottom: 0.2rem;
+    }
 }
 </style>
