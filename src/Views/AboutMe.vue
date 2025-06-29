@@ -1,11 +1,11 @@
 <template>
     <section class="about-me-section">
-        <ContentsText title="About me" />
-
         <div class="content">
             <img class="about-img" src="@/assets/about-me-img.jpg" alt="AboutMe写真" />
 
             <div class="text-block">
+                <ContentsText title="About me" />
+
                 <p>
                     はじめまして。秋山将輝と申します。<br />
                     未経験からWebエンジニアを目指して学習を進めており、特にHTML / CSS / JavaScript /
@@ -48,48 +48,62 @@ import CustomButton from '@/components/CustomButton.vue'
 
 <style scoped>
 .about-me-section {
-    padding: 3rem 2rem;
-    background-color: #F4FCFD;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #fff;
 }
 
 .content {
     display: flex;
     align-items: flex-start;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 52px;
+    margin-left: 145px;
+    margin-right: 144px;
     flex-wrap: wrap;
 }
 
 .about-img {
-    width: 440px;
-    height: 295px;
+    width: 534px;
+    height: 445px;
     object-fit: cover;
-    margin-left: 200px;
-    margin-top: 7px;
     border-radius: 10px;
 }
 
 .text-block {
     flex: 1;
-    min-width: 250px;
+    min-width: 300px;
     color: #583c27;
     font-size: 16px;
     line-height: 1.8;
-    margin-left: 120px;
-    margin-right: 150px;
+}
+
+.text-block :deep(.contents-text) {
+    margin-bottom: 31px;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 40px;
+    background-color: #fff;
+}
+
+p {
+    font-size: 16px;
+    width: 565px;
+    height: 215px;
+    margin: 0;
 }
 
 .link-row {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 1rem 0;
+    margin-top: 45px;
+    margin-bottom: 35px;
 }
 
 .github-link {
     font-size: 14px;
     color: #583c27;
     text-decoration: underline;
-    word-break: break-all;
+    word-break: break-word;
 }
 </style>
