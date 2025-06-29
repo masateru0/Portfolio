@@ -1,10 +1,20 @@
 <template>
-    <div :style="{ width: `${width}px`, height: `${height}px`, margin: '40px auto', background: '#fff' }">
+    <div
+        :style="{
+            width: `${width}px`,
+            height: `${height}px`,
+            margin: '40px auto',
+            background: '#fff',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }"
+    >
         <canvas
-        ref="radarRef"
-        :width="props.width"
-        :height="props.height"
-        style="width: 100%; height: 100%;"
+            ref="radarRef"
+            :width="width"
+            :height="height"
+            :style="`width: ${width}px; height: ${height}px; display: block;`"
         ></canvas>
     </div>
 </template>
@@ -16,13 +26,16 @@ import Chart from 'chart.js/auto'
 const props = defineProps({
     width: {
         type: Number,
-        default: 324,
+        default: 325,
     },
     height: {
         type: Number,
-        default: 237
-    }
+        default: 325,
+    },
 })
+
+const width = props.width
+const height = props.height
 
 const radarRef = ref(null)
 
@@ -34,6 +47,7 @@ onMounted(() => {
             labels: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'BootStrap', 'AWS', 'MySQL', 'Git'],
             datasets: [
                 {
+                    label: 'スキルレベル',
                     data: [8, 8, 7.5, 7.5, 7, 1, 1, 9],
                     backgroundColor: 'rgba(54, 162, 235, 0.3)',
                     borderColor: 'rgba(54, 162, 235, 1)',
@@ -55,7 +69,7 @@ onMounted(() => {
                 },
                 tooltip: {
                     enabled: true,
-                }
+                },
             },
             layout: {
                 padding: 10,

@@ -56,12 +56,12 @@ defineProps({
 .work-title {
     font-weight: bold;
     font-size: 1.1rem;
-    color: #4b3c2a;
+    color: #2C2C33;
     margin-bottom: 4px;
 }
 
 .work-description {
-    color: #444;
+    color: #2C2C33;
     font-size: 1rem;
 }
 </style>

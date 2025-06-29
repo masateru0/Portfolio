@@ -14,7 +14,7 @@
             </div>
 
             <div class="right-column">
-                <SkillGraph :width="324" :height="237" />
+                <SkillGraph :width="325" :height="325" />
             </div>
         </div>
 
@@ -119,7 +119,7 @@ const skills = [
 }
 
 .left-column {
-    margin-left: 145px;
+    margin-left: 165px;
     width: 585px;
 }
 
@@ -133,10 +133,17 @@ const skills = [
 .right-column {
     background-color: #fff;
     width: 502px;
-    height: 278px;
+    height: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 57px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .skill-text {
+    widows: 585px;
     height: 140px;
     margin-right: 64px;
 }

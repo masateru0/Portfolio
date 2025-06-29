@@ -143,10 +143,6 @@ const openDialog = (work) => {
     margin-left: 141px;
 }
 
-.works-section {
-    padding-bottom: 4rem;
-}
-
 .works-title {
     padding-top: 117px;
 }
@@ -158,7 +154,8 @@ const openDialog = (work) => {
     max-width: 900px;
     justify-items: center;
     max-width: 1200px;
-    margin: 0 auto 122px;
+    margin: 0 auto;
+    padding-bottom: 122px;
 }
 
 @media (max-width: 1024px) {
