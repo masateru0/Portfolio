@@ -27,10 +27,12 @@ import profileIcon from '@/assets/profile-icon.png'
 
 <style scoped>
 .profile-card {
-    width: 1150px;
+    width: 100%;
+    max-width: 1150px;
     height: 399px;
     background-color: #d6f2f8;
     display: flex;
+    margin: 0 auto;
 }
 
 .left-column {

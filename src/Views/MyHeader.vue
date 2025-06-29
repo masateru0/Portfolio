@@ -33,12 +33,13 @@ import CustomButton from '@/components/CustomButton.vue'
 import MyIcon from '@/components/MyIcon.vue'
 import { useRouter } from 'vue-router'
 
+const router = useRouter()
+
 const scrollToContact = () => {
     const contactSection = document.getElementById('contact')
     if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' })
     } else {
-        const router = useRouter()
         router.push({ name: 'TopPage', hash: '#contact' })
     }
 }

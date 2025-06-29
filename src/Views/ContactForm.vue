@@ -1,39 +1,64 @@
 <template>
     <section id="contact" class="form-section">
-        <ContentsText title="Contact" />
-
-        <el-form :model="form" label-position="top" class="contact-form">
+        <el-form :model="form" label-position="top" class="contact-form card-style">
+            <ContentsText title="Contact" class="contact-title" />
+            
             <el-form-item>
                 <div class="form-label">
                     <label>お名前</label>
                     <span class="required-label">必須</span>
                 </div>
-                <el-input v-model="form.name" />
+                <el-input
+                    v-model="form.name"
+                    placeholder="例）山田 太郎"
+                    size="large"
+                    class="fixed-input"
+                />
             </el-form-item>
+            <hr class="divider" />
 
             <el-form-item>
                 <div class="form-label">
                     <label>メールアドレス</label>
                     <span class="required-label">必須</span>
                 </div>
-                <el-input v-model="form.email" />
+                <el-input
+                    v-model="form.email"
+                    placeholder="例）your-email@example.com"
+                    size="large"
+                    class="fixed-input"
+                />
             </el-form-item>
+            <hr class="divider" />
 
             <el-form-item>
                 <div class="form-label">
                     <label>電話番号</label>
                     <span class="optional-label">任意</span>
                 </div>
-                <el-input v-model="form.phone" />
+                <el-input
+                    v-model="form.phone"
+                    placeholder="例）080xxxxxxxx"
+                    size="large"
+                    class="fixed-input"
+                />
             </el-form-item>
+            <hr class="divider" />
 
             <el-form-item>
                 <div class="form-label">
                     <label>お問い合わせ内容</label>
                     <span class="optional-label">任意</span>
                 </div>
-                <el-input v-model="form.message" type="textarea" rows="5" />
+                <el-input
+                    v-model="form.message"
+                    type="textarea"
+                    rows="5"
+                    placeholder="例）お問い合わせ内容を200文字以内でご記入ください。"
+                    class="fixed-textarea"
+                />
             </el-form-item>
+
 
             <div class="submit-btn-wrapper">
                 <CustomButton
@@ -79,14 +104,38 @@ const handleSubmit = () => {
     background-color: #f4fcfd;
     padding: 4rem 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .contact-form {
-    width: 100%;
-    max-width: 600px;
     margin-top: 2rem;
+}
+
+:deep(.contact-title) {
+    background-color: #fff;
+}
+
+.contact-form.card-style {
+    width: 1150px;
+    height: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 3rem 4rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.el-input,
+.el-textarea {
+    font-size: 16px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 1.5rem 0;
+    width: 540px;
 }
 
 .el-form-item {
@@ -112,6 +161,7 @@ const handleSubmit = () => {
     border-radius: 4px;
     font-size: 12px;
     line-height: 1;
+    width: 40px;
 }
 
 .required-label {
@@ -139,5 +189,17 @@ const handleSubmit = () => {
 
 .submit-btn:hover {
     background-color: #5bb8cc;
+}
+
+.fixed-input, .fixed-textarea {
+    width: 540px
+}
+
+.fixed-input {
+    height: 56px;
+}
+
+.fixed-textarea {
+    height: 170px;
 }
 </style>
