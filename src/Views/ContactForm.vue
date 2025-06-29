@@ -64,7 +64,6 @@
                     class="fixed-textarea"
                     @blur="validateMessage"
                 />
-
             </el-form-item>
             <p v-if="errors.message" class="error-message">{{ errors.message }}</p>
 
@@ -294,6 +293,12 @@ const handleSubmit = (event) => {
 .fixed-input:focus {
     border-color: #73d1e8;
     outline: none;
+}
+
+:deep(.fixed-textarea .el-textarea__inner) {
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
 }
 
 .fixed-textarea {

@@ -1,16 +1,22 @@
 <template>
     <section class="skills-section">
-        <ContentsText title="Skills" />
+        <div class="skill-content">
+            <div class="left-column">
+                <ContentsText title="Skills" />
 
-        <p class="skill-text">
-            主に Vue.js を用いたフロントエンド開発を得意としています。<br />
-            ユーザー体験を重視したインタラクティブな UI
-            の構築や、コンポーネント設計を意識した保守性・拡張性の高いコードを書くことを心がけています。<br />
-            また、Git
-            を活用したバージョン管理やチーム開発の経験もあり、ブランチ運用を通じてコードの品質を担保しつつ、円滑なコミュニケーションと効率的な開発をしてきました。
-        </p>
+                <p class="skill-text">
+                    主に Vue.js を用いたフロントエンド開発を得意としています。<br />
+                    ユーザー体験を重視したインタラクティブな UI
+                    の構築や、コンポーネント設計を意識した保守性・拡張性の高いコードを書くことを心がけています。<br />
+                    また、Git
+                    を活用したバージョン管理やチーム開発の経験もあり、ブランチ運用を通じてコードの品質を担保しつつ、円滑なコミュニケーションと効率的な開発をしてきました。
+                </p>
+            </div>
 
-        <SkillGraph />
+            <div class="right-column">
+                <SkillGraph :width="324" :height="237" />
+            </div>
+        </div>
 
         <div class="skill-card-style">
             <div class="tip">
@@ -106,8 +112,33 @@ const skills = [
     background-color: #f0f2f3;
 }
 
+.skill-content {
+    display: flex;
+    padding-top: 150px;
+    padding-bottom: 40px;
+}
+
+.left-column {
+    margin-left: 145px;
+    width: 585px;
+}
+
+.left-column :deep(.contents-text) {
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.right-column {
+    background-color: #fff;
+    width: 502px;
+    height: 278px;
+}
+
 .skill-text {
-    padding: 2rem 20rem;
+    height: 140px;
+    margin-right: 64px;
 }
 
 .tip {
