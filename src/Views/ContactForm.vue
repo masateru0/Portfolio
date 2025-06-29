@@ -3,7 +3,7 @@
         <el-form :model="form" label-position="top" class="contact-form card-style" @submit.prevent>
             <ContentsText title="Contact" class="contact-title" />
 
-            <el-form-item class="form-row">
+            <el-form-item class="form-row" style="position: relative">
                 <div class="form-label-col">
                     <label>お名前</label>
                     <span class="required-label">必須</span>
@@ -15,11 +15,11 @@
                     class="fixed-input"
                     @blur="validateName"
                 />
+                <div v-if="showNameError" class="error-message">名前は必須入力です。</div>
             </el-form-item>
-            <p v-if="errors.name" class="error-message">{{ errors.name }}</p>
             <hr class="divider" />
 
-            <el-form-item class="form-row">
+            <el-form-item class="form-row" style="position: relative">
                 <div class="form-label-col">
                     <label>メールアドレス</label>
                     <span class="required-label">必須</span>
@@ -31,11 +31,14 @@
                     class="fixed-input"
                     @blur="validateEmail"
                 />
+                <div v-if="showEmailError" class="error-message">
+                    <template v-if="!form.email">メールアドレスは必須入力です。</template>
+                    <template v-else>メールアドレスの形式が正しくありません。</template>
+                </div>
             </el-form-item>
-            <p v-if="errors.email" class="error-message">{{ errors.email }}</p>
             <hr class="divider" />
 
-            <el-form-item class="form-row">
+            <el-form-item class="form-row" style="position: relative">
                 <div class="form-label-col">
                     <label>電話番号</label>
                     <span class="optional-label">任意</span>
@@ -47,11 +50,13 @@
                     class="fixed-input"
                     @blur="validatePhone"
                 />
+                <div v-if="showPhoneError" class="error-message">
+                    電話番号は正しい形式で入力してください。
+                </div>
             </el-form-item>
-            <p v-if="errors.phone" class="error-message">{{ errors.phone }}</p>
             <hr class="divider" />
 
-            <el-form-item class="form-row">
+            <el-form-item class="form-row" style="position: relative">
                 <div class="form-label-col">
                     <label>お問い合わせ内容</label>
                     <span class="optional-label">任意</span>
@@ -64,8 +69,11 @@
                     class="fixed-textarea"
                     @blur="validateMessage"
                 />
+                <div v-if="showMessageError" class="error-message">
+                    <template v-if="!form.message">お問い合わせ内容は必須入力です。</template>
+                    <template v-else>200文字以内で入力してください。</template>
+                </div>
             </el-form-item>
-            <p v-if="errors.message" class="error-message">{{ errors.message }}</p>
 
             <div class="submit-btn-wrapper">
                 <CustomButton
@@ -79,8 +87,8 @@
     </section>
 </template>
 
-<script setup>
-import { reactive } from 'vue'
+<script lang="ts" setup>
+import { reactive, computed, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import ContentsText from '@/components/ContentsText.vue'
 import CustomButton from '@/components/CustomButton.vue'
@@ -99,7 +107,37 @@ const errors = reactive({
     message: '',
 })
 
+const isSubmitted = ref(false)
+const isNameTouched = ref(false)
+const isEmailTouched = ref(false)
+const isPhoneTouched = ref(false)
+const isMessageTouched = ref(false)
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const phoneRegex = /^0\d{9,10}$/
+
+const showNameError = computed(() => (isSubmitted.value || isNameTouched.value) && !form.name)
+const showEmailError = computed(() => {
+    if (!(isSubmitted.value || isEmailTouched.value)) return false
+    if (!form.email) return true
+    if (!emailRegex.test(form.email)) return true
+    return false
+})
+const showPhoneError = computed(() => {
+    if (!(isSubmitted.value || isPhoneTouched.value)) return false
+    if (!form.phone) return false
+    if (!phoneRegex.test(form.phone)) return true
+    return false
+})
+const showMessageError = computed(() => {
+    if (!(isSubmitted.value || isMessageTouched.value)) return false
+    if (!form.message) return false
+    if (form.message.length > 200) return true
+    return false
+})
+
 const validateName = () => {
+    isNameTouched.value = true
     if (!form.name.trim()) {
         errors.name = '名前は必須入力です。'
     } else {
@@ -108,7 +146,7 @@ const validateName = () => {
 }
 
 const validateEmail = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    isEmailTouched.value = true
     if (!form.email.trim()) {
         errors.email = 'メールアドレスは必須入力です。'
     } else if (!emailRegex.test(form.email)) {
@@ -119,7 +157,7 @@ const validateEmail = () => {
 }
 
 const validatePhone = () => {
-    const phoneRegex = /^0\d{9,10}$/
+    isPhoneTouched.value = true
     if (form.phone.trim() && !phoneRegex.test(form.phone)) {
         errors.phone = '電話番号は正しい形式で入力してください。'
     } else {
@@ -128,6 +166,7 @@ const validatePhone = () => {
 }
 
 const validateMessage = () => {
+    isMessageTouched.value = true
     if (form.message.trim().length > 200) {
         errors.message = '200文字以内で入力してください。'
     } else {
@@ -135,61 +174,28 @@ const validateMessage = () => {
     }
 }
 
-const validateForm = () => {
-    let isValid = true
-
-    if (!form.name.trim()) {
-        errors.name = '名前は必須入力です。'
-        isValid = false
-    } else {
-        errors.name = ''
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!form.email.trim()) {
-        errors.email = 'メールアドレスは必須入力です。'
-        isValid = false
-    } else if (!emailRegex.test(form.email)) {
-        errors.email = 'メールアドレスの形式が正しくありません。'
-        isValid = false
-    } else {
-        errors.email = ''
-    }
-
-    const phoneRegex = /^0\d{9,10}$/
-    if (form.phone.trim() && !phoneRegex.test(form.phone)) {
-        errors.phone = '電話番号は正しい形式で入力してください。'
-        isValid = false
-    } else {
-        errors.phone = ''
-    }
-
-    if (form.message.trim().length > 200) {
-        errors.message = '200文字以内で入力してください。'
-        isValid = false
-    } else {
-        errors.message = ''
-    }
-
-    return isValid
-}
-
-const handleSubmit = (event) => {
-    if (event) {
-        event.preventDefault()
-    }
-
-    if (!validateForm()) {
+const handleSubmit = () => {
+    isSubmitted.value = true
+    if (
+        !form.name ||
+        !form.email ||
+        !emailRegex.test(form.email) ||
+        (form.phone && !phoneRegex.test(form.phone)) ||
+        (form.message && form.message.length > 200)
+    ) {
         ElMessage.error('必須項目が入力されていません。')
         return
     }
-
     ElMessage.success('送信しました。')
-
     form.name = ''
     form.email = ''
     form.phone = ''
     form.message = ''
+    isSubmitted.value = false
+    isNameTouched.value = false
+    isEmailTouched.value = false
+    isPhoneTouched.value = false
+    isMessageTouched.value = false
 }
 </script>
 
@@ -204,17 +210,24 @@ const handleSubmit = (event) => {
 }
 
 .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 0.5rem;
-    margin-left: 277px;
+    position: absolute;
+    left: 240px;
+    bottom: -2.2em;
+    color: #eb8787;
+    font-size: 13px;
+    font-weight: normal;
+    width: 540px;
+    text-align: left;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .contact-form {
     margin-top: 2rem;
 }
 
-:deep(.contact-title) {
+.contents-text.contact-title {
+    margin-bottom: 60px;
     background-color: #fff;
 }
 
@@ -228,7 +241,6 @@ const handleSubmit = (event) => {
     padding: 3rem 4rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     margin: 0 auto;
-    display: flex;
     flex-direction: column;
 }
 
@@ -242,7 +254,7 @@ const handleSubmit = (event) => {
     border-top: 1px solid #ccc;
     background: #ccc;
     color: #ccc;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
     width: 100%;
     max-width: 700px;
 }
@@ -260,7 +272,7 @@ const handleSubmit = (event) => {
     align-items: flex-start;
     width: 100%;
     max-width: 700px;
-    margin: 0 auto 0.5rem auto;
+    margin: 0 auto 2.8rem auto;
     gap: 2rem;
 }
 
@@ -382,6 +394,13 @@ const handleSubmit = (event) => {
         max-width: unset;
         font-size: 16px;
         margin-bottom: 0.2rem;
+    }
+    .error-message {
+        left: 0;
+        width: 100%;
+        position: static;
+        margin-top: 0.2em;
+        bottom: auto;
     }
 }
 </style>
