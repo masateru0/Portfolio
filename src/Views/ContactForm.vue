@@ -1,6 +1,6 @@
 <template>
     <section id="contact" class="form-section">
-        <el-form :model="form" label-position="top" class="contact-form card-style">
+        <el-form :model="form" label-position="top" class="contact-form card-style" @submit.prevent>
             <ContentsText title="Contact" class="contact-title" />
 
             <el-form-item class="form-row">
@@ -13,8 +13,10 @@
                     placeholder="例）山田 太郎"
                     size="large"
                     class="fixed-input"
+                    @blur="validateName"
                 />
             </el-form-item>
+            <p v-if="errors.name" class="error-message">{{ errors.name }}</p>
             <hr class="divider" />
 
             <el-form-item class="form-row">
@@ -27,8 +29,10 @@
                     placeholder="例）your-mail@exsample.com"
                     size="large"
                     class="fixed-input"
+                    @blur="validateEmail"
                 />
             </el-form-item>
+            <p v-if="errors.email" class="error-message">{{ errors.email }}</p>
             <hr class="divider" />
 
             <el-form-item class="form-row">
@@ -38,11 +42,13 @@
                 </div>
                 <el-input
                     v-model="form.phone"
-                    placeholder="例）090xxxxxxxx"
+                    placeholder="例）080xxxxxxxx (ハイフンなし)"
                     size="large"
                     class="fixed-input"
+                    @blur="validatePhone"
                 />
             </el-form-item>
+            <p v-if="errors.phone" class="error-message">{{ errors.phone }}</p>
             <hr class="divider" />
 
             <el-form-item class="form-row">
@@ -56,8 +62,11 @@
                     rows="5"
                     placeholder="例）お問い合わせ内容を200文字以内でご記入ください。"
                     class="fixed-textarea"
+                    @blur="validateMessage"
                 />
+
             </el-form-item>
+            <p v-if="errors.message" class="error-message">{{ errors.message }}</p>
 
             <div class="submit-btn-wrapper">
                 <CustomButton
@@ -71,8 +80,9 @@
     </section>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { reactive } from 'vue'
+import { ElMessage } from 'element-plus'
 import ContentsText from '@/components/ContentsText.vue'
 import CustomButton from '@/components/CustomButton.vue'
 
@@ -83,13 +93,99 @@ const form = reactive({
     message: '',
 })
 
-const handleSubmit = () => {
-    if (!form.name || !form.email || !form.message) {
-        alert('必須項目が入力されていません。')
+const errors = reactive({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+})
+
+const validateName = () => {
+    if (!form.name.trim()) {
+        errors.name = '名前は必須入力です。'
+    } else {
+        errors.name = ''
+    }
+}
+
+const validateEmail = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!form.email.trim()) {
+        errors.email = 'メールアドレスは必須入力です。'
+    } else if (!emailRegex.test(form.email)) {
+        errors.email = 'メールアドレスの形式が正しくありません。'
+    } else {
+        errors.email = ''
+    }
+}
+
+const validatePhone = () => {
+    const phoneRegex = /^0\d{9,10}$/
+    if (form.phone.trim() && !phoneRegex.test(form.phone)) {
+        errors.phone = '電話番号は正しい形式で入力してください。'
+    } else {
+        errors.phone = ''
+    }
+}
+
+const validateMessage = () => {
+    if (form.message.trim().length > 200) {
+        errors.message = '200文字以内で入力してください。'
+    } else {
+        errors.message = ''
+    }
+}
+
+const validateForm = () => {
+    let isValid = true
+
+    if (!form.name.trim()) {
+        errors.name = '名前は必須入力です。'
+        isValid = false
+    } else {
+        errors.name = ''
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!form.email.trim()) {
+        errors.email = 'メールアドレスは必須入力です。'
+        isValid = false
+    } else if (!emailRegex.test(form.email)) {
+        errors.email = 'メールアドレスの形式が正しくありません。'
+        isValid = false
+    } else {
+        errors.email = ''
+    }
+
+    const phoneRegex = /^0\d{9,10}$/
+    if (form.phone.trim() && !phoneRegex.test(form.phone)) {
+        errors.phone = '電話番号は正しい形式で入力してください。'
+        isValid = false
+    } else {
+        errors.phone = ''
+    }
+
+    if (form.message.trim().length > 200) {
+        errors.message = '200文字以内で入力してください。'
+        isValid = false
+    } else {
+        errors.message = ''
+    }
+
+    return isValid
+}
+
+const handleSubmit = (event) => {
+    if (event) {
+        event.preventDefault()
+    }
+
+    if (!validateForm()) {
+        ElMessage.error('必須項目が入力されていません。')
         return
     }
 
-    alert('送信しました。')
+    ElMessage.success('送信しました。')
 
     form.name = ''
     form.email = ''
@@ -106,6 +202,13 @@ const handleSubmit = () => {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 0.5rem;
+    margin-left: 277px;
 }
 
 .contact-form {
@@ -128,7 +231,7 @@ const handleSubmit = () => {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .el-input,
@@ -159,7 +262,7 @@ const handleSubmit = () => {
     align-items: flex-start;
     width: 100%;
     max-width: 700px;
-    margin: 0 auto 2.2rem auto;
+    margin: 0 auto 0.5rem auto;
     gap: 2rem;
 }
 

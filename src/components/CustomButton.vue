@@ -3,7 +3,7 @@
         :is="tag"
         :to="to"
         :href="href"
-        @click="$emit('click')"
+        @click="$emit('click', $event)"
         :class="customClass"
         class="base-btn"
     >
