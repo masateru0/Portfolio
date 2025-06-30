@@ -1,7 +1,7 @@
 <template>
     <section class="skills-section">
         <div class="skill-content">
-            <div class="left-column">
+            <div class="skills-left-column">
                 <ContentsText title="Skills" />
 
                 <p class="skill-text">
@@ -13,7 +13,7 @@
                 </p>
             </div>
 
-            <div class="right-column">
+            <div class="skills-right-column">
                 <SkillGraph :width="325" :height="325" />
             </div>
         </div>
@@ -60,7 +60,7 @@ const skills = [
         title: 'JavaScript',
         icon: new URL('@/assets/skills/js-icon.png', import.meta.url).href,
         description: 'JavaScriptの基礎知識を身につけ、簡単なwebアプリを作れます',
-        rating: 3,
+        rating: 4,
     },
     {
         title: 'BootStrap',
@@ -73,7 +73,7 @@ const skills = [
         icon: new URL('@/assets/skills/vue-icon.png', import.meta.url).href,
         description:
             'Vue.jsの基礎知識を身につけ、コンポーネント設計を意識した簡単でモダンなwebアプリを作れます',
-        rating: 3,
+        rating: 4,
     },
     {
         title: 'MySQL',
@@ -85,7 +85,7 @@ const skills = [
         title: 'AWS',
         icon: new URL('@/assets/skills/AWS-icon.png', import.meta.url).href,
         description: 'AWSクラウドプラクティショナーを取得しました',
-        rating: 2,
+        rating: 1,
     },
     {
         title: 'Git',
@@ -118,19 +118,19 @@ const skills = [
     padding-bottom: 40px;
 }
 
-.left-column {
+.skills-left-column {
     margin-left: 165px;
     width: 585px;
 }
 
-.left-column :deep(.contents-text) {
+.skills-left-column :deep(.contents-text) {
     justify-content: flex-start;
     text-align: left;
     font-size: 40px;
     margin-bottom: 40px;
 }
 
-.right-column {
+.skills-right-column {
     background-color: #fff;
     width: 502px;
     height: 325px;
