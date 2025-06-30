@@ -63,9 +63,7 @@ watch(
         internalVisible.value = val
 
         selectedImage.value =
-            Array.isArray(props.images) && props.images.length > 0
-            ? props.images[0]
-            : ''
+            Array.isArray(props.images) && props.images.length > 0 ? props.images[0] : ''
     },
 )
 
@@ -82,9 +80,13 @@ const selectImage = (img) => {
 }
 </script>
 
-<style scoped>
+<style>
+.el-overlay-dialog {
+    top: unset !important;
+}
+
 .works-dialog {
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 1rem;
 }
 
@@ -98,7 +100,6 @@ const selectImage = (img) => {
 .dialog-title {
     background-color: transparent;
 }
-
 
 .left-column {
     flex: 1;
@@ -119,7 +120,7 @@ const selectImage = (img) => {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 120px;
+    margin-top: auto;
 }
 
 .right-column {
@@ -127,7 +128,6 @@ const selectImage = (img) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     margin-right: 57px;
 }
 
