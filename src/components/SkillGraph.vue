@@ -47,8 +47,8 @@ onMounted(() => {
             labels: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'BootStrap', 'AWS', 'MySQL', 'Git'],
             datasets: [
                 {
-                    label: 'スキルレベル',
-                    data: [8, 8, 7.5, 7.5, 7, 1, 1, 9],
+                    label: '技術スキルレベル',
+                    data: [8, 8, 6, 6, 8, 4, 2, 8],
                     backgroundColor: 'rgba(54, 162, 235, 0.3)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     pointBackgroundColor: 'rgba(54, 162, 235, 1)',

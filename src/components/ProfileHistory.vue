@@ -26,7 +26,7 @@ const timeline = [
         year: '1997',
         month: '3月',
         title: '元気いっぱい明るい幼少期',
-        body: '埼玉県入間市に秋山家の三男として生まれる',
+        body: '埼玉県入間市にて、秋山家の三男として誕生。幼少期は、兄弟や近所の友人たちとともに、近くの公園で毎日のように夢中になって遊び、のびのびと成長していきました。',
     },
     {
         year: '2004',
@@ -75,14 +75,14 @@ const timeline = [
 
 <style scoped>
 .timeline-bg {
-    background: #F4FCFD;
+    background: #f4fcfd;
     min-height: 100vh;
     padding: 0;
     padding-bottom: 216px;
 }
 .timeline-outer {
     position: relative;
-    width: 700px;
+    width: 1130px; /* 例: 700px → 900px */
     margin: 0 auto;
     padding: 40px 0 40px 0;
 }
@@ -113,7 +113,7 @@ const timeline = [
 .timeline-content-block {
     background: none;
     min-width: 260px;
-    max-width: 340px;
+    max-width: 560px; /* 例: 340px → 440px */
     padding: 0 24px;
     text-align: left;
     position: relative;
@@ -135,7 +135,7 @@ const timeline = [
 .timeline-year {
     font-size: 2.1em;
     font-weight: bold;
-    color: #2C2C33;
+    color: #2c2c33;
     line-height: 1.1;
 }
 .timeline-month {
@@ -153,11 +153,11 @@ const timeline = [
     font-size: 1.1em;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #2C2C33;
+    color: #2c2c33;
 }
 .timeline-body {
     font-size: 0.98em;
-    color: #2C2C33;
+    color: #2c2c33;
     line-height: 1.8;
 }
 @media (max-width: 900px) {

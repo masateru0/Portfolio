@@ -27,45 +27,45 @@ import ContentsText from '@/components/ContentsText.vue'
 import WorkCard from '@/components/WorkCard.vue'
 import WorksDialog from '@/components/WorksDialog.vue'
 
-import webSiteImage from '@/assets/web-site.png';
-import fortuneAppImage from '@/assets/fortune-app.png';
-import questionAppImage from '@/assets/question-app.png';
-import calculatorAppImage from '@/assets/calculator-app.png';
-import todoListAppImage from '@/assets/todo-list-app.png';
-import portfolioAppImage from '@/assets/portfolio-app.png';
+import webSiteImage from '@/assets/works/web-site.png';
+import fortuneAppImage from '@/assets/works/fortune-app.png';
+import questionAppImage from '@/assets/works/question-app.png';
+import calculatorAppImage from '@/assets/works/calculator-app.png';
+import todoListAppImage from '@/assets/works/todo-list-app.png';
+import portfolioAppImage from '@/assets/works/portfolio-app.png';
 
-import websiteView from '@/assets/website-view.svg';
-import websiteAbout from '@/assets/website-about.png';
-import websiteBlog from '@/assets/website-blog.png';
-import websiteContact from '@/assets/website-contact.png';
-import websiteFooter from '@/assets/website-footer.png';
+import websiteView from '@/assets/works/website-view.svg';
+import websiteAbout from '@/assets/works/website-about.png';
+import websiteBlog from '@/assets/works/website-blog.png';
+import websiteContact from '@/assets/works/website-contact.png';
+import websiteFooter from '@/assets/works/website-footer.png';
 
-import fortuneView from '@/assets/fortune-view.svg';
-import fortune1 from '@/assets/fortune-1.png';
-import fortune2 from '@/assets/fortune-2.png';
-import fortune3 from '@/assets/fortune-3.png';
-import fortune4 from '@/assets/fortune-4.png';
+import fortuneView from '@/assets/works/fortune-view.svg';
+import fortune1 from '@/assets/works/fortune-1.png';
+import fortune2 from '@/assets/works/fortune-2.png';
+import fortune3 from '@/assets/works/fortune-3.png';
+import fortune4 from '@/assets/works/fortune-4.png';
 
-import questionView from '@/assets/question-view.svg';
-import question1 from '@/assets/question-1.png';
-import question2 from '@/assets/question-2.png';
-import question3 from '@/assets/question-3.png';
-import question4 from '@/assets/question-4.png';
+import questionView from '@/assets/works/question-view.svg';
+import question1 from '@/assets/works/question-1.png';
+import question2 from '@/assets/works/question-2.png';
+import question3 from '@/assets/works/question-3.png';
+import question4 from '@/assets/works/question-4.png';
 
-import calculatorView from '@/assets/calculator-view.svg';
-import calculator1 from '@/assets/calculator-1.png';
-import calculator2 from '@/assets/calculator-2.png';
-import calculator3 from '@/assets/calculator-3.png';
-import calculator4 from '@/assets/calculator-4.png';
+import calculatorView from '@/assets/works/calculator-view.svg';
+import calculator1 from '@/assets/works/calculator-1.png';
+import calculator2 from '@/assets/works/calculator-2.png';
+import calculator3 from '@/assets/works/calculator-3.png';
+import calculator4 from '@/assets/works/calculator-4.png';
 
-import todoView from '@/assets/todo-view.svg';
-import todo1 from '@/assets/todo-1.png';
-import todo2 from '@/assets/todo-2.png';
-import todo3 from '@/assets/todo-3.png';
-import todo4 from '@/assets/todo-4.png';
-import todo5 from '@/assets/todo-5.png';
+import todoView from '@/assets/works/todo-view.svg';
+import todo1 from '@/assets/works/todo-1.png';
+import todo2 from '@/assets/works/todo-2.png';
+import todo3 from '@/assets/works/todo-3.png';
+import todo4 from '@/assets/works/todo-4.png';
+import todo5 from '@/assets/works/todo-5.png';
 
-import portfolioView from '@/assets/portfolio-view.svg';
+import portfolioView from '@/assets/works/portfolio-view.svg';
 
 const works = [
     {

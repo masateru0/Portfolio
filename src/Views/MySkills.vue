@@ -60,7 +60,7 @@ const skills = [
         title: 'JavaScript',
         icon: new URL('@/assets/skills/js-icon.png', import.meta.url).href,
         description: 'JavaScriptの基礎知識を身につけ、簡単なwebアプリを作れます',
-        rating: 4,
+        rating: 3,
     },
     {
         title: 'BootStrap',
@@ -73,7 +73,7 @@ const skills = [
         icon: new URL('@/assets/skills/vue-icon.png', import.meta.url).href,
         description:
             'Vue.jsの基礎知識を身につけ、コンポーネント設計を意識した簡単でモダンなwebアプリを作れます',
-        rating: 4,
+        rating: 3,
     },
     {
         title: 'MySQL',
@@ -85,7 +85,7 @@ const skills = [
         title: 'AWS',
         icon: new URL('@/assets/skills/AWS-icon.png', import.meta.url).href,
         description: 'AWSクラウドプラクティショナーを取得しました',
-        rating: 1,
+        rating: 2,
     },
     {
         title: 'Git',
