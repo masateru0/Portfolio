@@ -33,7 +33,7 @@
                 />
                 <div v-if="showEmailError" class="error-message">
                     <template v-if="!form.email">メールアドレスは必須入力です。</template>
-                    <template v-else>メールアドレスの形式が正しくありません。</template>
+                    <template v-else>メールアドレスの形式が正しくありません。半角英数字で入力してください。</template>
                 </div>
             </el-form-item>
             <hr class="divider" />
@@ -45,13 +45,13 @@
                 </div>
                 <el-input
                     v-model="form.phone"
-                    placeholder="例）080xxxxxxxx (ハイフンなし)"
+                    placeholder="例）080xxxxxxxx"
                     size="large"
                     class="fixed-input"
                     @blur="validatePhone"
                 />
                 <div v-if="showPhoneError" class="error-message">
-                    電話番号は正しい形式で入力してください。
+                    電話番号の形式が正しくありません。半角数字で入力してください。
                 </div>
             </el-form-item>
             <hr class="divider" />
@@ -150,7 +150,7 @@ const validateEmail = () => {
     if (!form.email.trim()) {
         errors.email = 'メールアドレスは必須入力です。'
     } else if (!emailRegex.test(form.email)) {
-        errors.email = 'メールアドレスの形式が正しくありません。'
+        errors.email = 'メールアドレスの形式が正しくありません。半角英数字で入力してください。'
     } else {
         errors.email = ''
     }
@@ -159,7 +159,7 @@ const validateEmail = () => {
 const validatePhone = () => {
     isPhoneTouched.value = true
     if (form.phone.trim() && !phoneRegex.test(form.phone)) {
-        errors.phone = '電話番号は正しい形式で入力してください。'
+        errors.phone = '電話番号の形式が正しくありません。半角数字で入力してください。'
     } else {
         errors.phone = ''
     }
@@ -401,6 +401,78 @@ const handleSubmit = () => {
         position: static;
         margin-top: 0.2em;
         bottom: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-section {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .contact-form.card-style {
+        min-width: unset;
+        max-width: 100%;
+        margin: 0 20px;
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .form-label-col {
+        margin-bottom: 0.5rem;
+        min-width: unset;
+        max-width: unset;
+        width: 100%;
+    }
+    .fixed-input,
+    .fixed-textarea {
+        width: 100%;
+    }
+
+    .form-label-col {
+        font-size: 15px;
+    }
+
+    .required-label,
+    .optional-label {
+        font-size: 13px;
+        padding: 0.15rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 40px 0;
+    }
+
+    .contact-form.card-style {
+        margin: 0 15px;
+        padding: 1rem;
+    }
+
+    .form-label-col {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .fixed-input,
+    .fixed-textarea {
+        font-size: 14px;
+    }
+
+    .required-label,
+    .optional-label {
+        font-size: 12px;
+        padding: 0.12rem 0.5rem;
+    }
+
+    .submit-btn {
+        padding: 0.6rem 2rem;
+        font-size: 13px;
     }
 }
 </style>

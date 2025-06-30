@@ -53,4 +53,58 @@ h1 {
     align-items: center;
     font-size: 14px;
 }
+
+@media (max-width: 1024px) {
+    .profile-end-card {
+        width: 90%;
+        height: auto;
+        min-height: 399px;
+        margin-bottom: 40px;
+    }
+
+    .end-description {
+        width: 90%;
+        height: auto;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-end-card {
+        width: 95%;
+        margin-bottom: 30px;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .end-description {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-end-card {
+        width: 98%;
+        margin-bottom: 20px;
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .end-description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
 </style>

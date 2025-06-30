@@ -35,15 +35,14 @@ defineProps({
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 .skill-header {
-    background-color: #F0F2F3;
+    background-color: #f0f2f3;
     padding: 0.5rem 1.2rem 0 1.2rem;
     text-align: center;
-
 }
 .skill-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #2C2C33;
+    color: #2c2c33;
     margin-bottom: 0.2rem;
     margin-top: 0;
     text-align: center;
@@ -83,5 +82,66 @@ defineProps({
 }
 .star.active {
     color: #ffd700;
+}
+
+@media (max-width: 768px) {
+    .skill-card {
+        max-width: 280px;
+        height: 220px;
+    }
+
+    .skill-title {
+        font-size: 1.8rem;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-description {
+        font-size: 14px;
+        min-height: 4.2em;
+    }
+
+    .stars {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-card {
+        max-width: 250px;
+        height: 200px;
+    }
+
+    .skill-header {
+        padding: 0.4rem 1rem 0 1rem;
+    }
+
+    .skill-title {
+        font-size: 1.6rem;
+    }
+
+    .skill-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0.8rem;
+    }
+
+    .description-area {
+        padding: 0.6rem 1rem 1rem 1rem;
+    }
+
+    .skill-description {
+        font-size: 13px;
+        min-height: 3.8em;
+        line-height: 1.5;
+    }
+
+    .stars {
+        font-size: 1.1rem;
+        gap: 0.15rem;
+    }
 }
 </style>

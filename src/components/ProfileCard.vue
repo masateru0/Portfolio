@@ -92,4 +92,86 @@ import profileIcon from '@/assets/profile-icon.png'
     width: 409px;
     height: 216px;
 }
+
+@media (max-width: 1024px) {
+    .profile-card {
+        height: auto;
+        min-height: 399px;
+    }
+
+    .left-column {
+        margin-left: 30px;
+    }
+
+    .right-column {
+        margin-right: 30px;
+    }
+
+    .description {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .left-column {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .right-column {
+        margin-right: 0;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    .profile-text {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .profile-image img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .title {
+        font-size: 13px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+}
 </style>

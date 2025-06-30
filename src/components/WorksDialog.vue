@@ -149,4 +149,92 @@ const selectImage = (img) => {
 .thumbnail.selected {
     border-color: #73d1e8;
 }
+
+@media (max-width: 1024px) {
+    .works-dialog {
+        width: 90vw !important;
+        max-width: 900px;
+    }
+
+    .dialog-content {
+        gap: 1.5rem;
+    }
+
+    .left-column {
+        margin-left: 30px;
+    }
+
+    .right-column {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .works-dialog {
+        width: 95vw !important;
+        max-width: 600px;
+        padding: 0.5rem;
+    }
+
+    .dialog-content {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 15px;
+    }
+
+    .left-column {
+        margin-left: 0;
+        order: 2;
+    }
+
+    .right-column {
+        margin-right: 0;
+        order: 1;
+    }
+
+    .dialog-text {
+        font-size: 13px;
+        margin: 30px 0;
+    }
+
+    .thumbnails {
+        margin-bottom: 1rem;
+    }
+
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .works-dialog {
+        width: 98vw !important;
+        padding: 0.25rem;
+    }
+
+    .dialog-content {
+        margin-top: 10px;
+    }
+
+    .dialog-text {
+        font-size: 12px;
+        margin: 20px 0;
+        line-height: 1.6;
+    }
+
+    .thumbnails {
+        gap: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .thumbnail {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tags {
+        gap: 0.25rem;
+    }
+}
 </style>

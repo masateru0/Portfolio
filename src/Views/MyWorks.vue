@@ -66,6 +66,13 @@ import todo4 from '@/assets/works/todo-4.png'
 import todo5 from '@/assets/works/todo-5.png'
 
 import portfolioView from '@/assets/works/portfolio-view.svg'
+import portfolioSmartPhoneView from '@/assets/works/portfolio-iPhone-view.svg'
+import portfolio1 from '@/assets/works/portfolio-1.png'
+import portfolio2 from '@/assets/works/portfolio-2.png'
+import portfolio3 from '@/assets/works/portfolio-3.png'
+import portfolio4 from '@/assets/works/portfolio-4.png'
+import portfolio5 from '@/assets/works/portfolio-5.png'
+
 
 const works = [
     {
@@ -120,7 +127,7 @@ const works = [
             'Vue.js、CSS、そしてElement Plusを組み合わせたポートフォリオアプリでは、見やすいUI設計にこだわりました。Element Plusの豊富なコンポーネントを活用し、一貫性のあるデザインと操作性を実現。また、コンポーネントの再利用性を意識して設計し、メンテナンス性を向上。アニメーションやホバー効果で視覚的なアクセントを加え、閲覧者に印象的な体験を提供しています。さらに、動的なデータバインディングを活用して、作品情報やスキルを柔軟に管理できるよう工夫しました。',
         image: portfolioAppImage,
         tag: ['CSS', 'Vue.js', 'ElementPlus'],
-        images: [portfolioView],
+        images: [ portfolioView, portfolioSmartPhoneView, portfolio1, portfolio2, portfolio3, portfolio4, portfolio5 ],
     },
 ]
 const dialogVisible = ref(false)
@@ -165,17 +172,59 @@ const openDialog = (work) => {
 }
 
 @media (max-width: 1024px) {
+    .works-section :deep(.works-title) {
+        margin-left: 50px;
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .works-title {
+        padding-top: 100px;
+    }
+
     .works-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 36px 24px;
         max-width: 650px;
+        padding-bottom: 100px;
     }
 }
-@media (max-width: 700px) {
+
+@media (max-width: 768px) {
+    .works-section :deep(.works-title) {
+        margin-left: 20px;
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .works-title {
+        padding-top: 80px;
+    }
+
     .works-grid {
         grid-template-columns: 1fr;
         gap: 28px 0;
-        max-width: 95vw;
+        max-width: 100%;
+        padding: 0 20px 80px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .works-section :deep(.works-title) {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .works-title {
+        padding-top: 60px;
+    }
+
+    .works-grid {
+        padding: 0 15px 60px 15px;
     }
 }
 </style>

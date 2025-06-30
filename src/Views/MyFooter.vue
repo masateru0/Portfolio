@@ -29,7 +29,7 @@ import FooterButton from '@/components/FooterButton.vue'
 }
 
 .thank-you {
-    color: #2C2C33;
+    color: #2c2c33;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -37,6 +37,30 @@ import FooterButton from '@/components/FooterButton.vue'
 
 .copyright {
     font-size: 12px;
-    color: #2C2C33;
+    color: #2c2c33;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .thank-you {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        padding: 1rem 0.5rem;
+    }
+
+    .thank-you {
+        font-size: 28px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
 }
 </style>

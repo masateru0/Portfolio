@@ -187,17 +187,123 @@ const skills = [
 }
 
 @media (max-width: 1024px) {
+    .skill-content {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    .skills-left-column {
+        margin-left: 0;
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    .skills-left-column :deep(.contents-text) {
+        justify-content: center;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .skills-right-column {
+        margin-left: 0;
+        margin-top: 40px;
+        width: 400px;
+        height: 260px;
+    }
+
+    .skill-text {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .skill-card-style {
+        min-width: unset;
+        max-width: 345px;
+        padding: 2rem;
+    }
+
+    .tip {
+        margin-left: 0;
+        justify-content: center;
+    }
+
     .skill-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 36px 24px;
         max-width: 650px;
     }
 }
-@media (max-width: 700px) {
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding-bottom: 80px;
+    }
+
+    .skill-content {
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+
+    .skills-left-column :deep(.contents-text) {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .skills-right-column {
+        width: 300px;
+        height: 195px;
+        margin-bottom: 2.5rem;
+    }
+
+    .skill-card-style {
+        padding: 1.5rem;
+        margin: 0 20px;
+    }
+
     .skill-grid {
         grid-template-columns: 1fr;
         gap: 28px 0;
-        max-width: 95vw;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding-bottom: 60px;
+    }
+
+    .skill-content {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+
+    .skills-left-column :deep(.contents-text) {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .skills-right-column {
+        width: 250px;
+        height: 162px;
+        margin-bottom: 5rem;
+    }
+
+    .skill-card-style {
+        padding: 1rem;
+        margin: 0 15px;
+    }
+
+    .tip {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .tip p {
+        font-size: 14px;
     }
 }
 </style>

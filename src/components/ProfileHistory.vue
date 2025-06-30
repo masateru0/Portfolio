@@ -160,6 +160,23 @@ const timeline = [
     color: #2c2c33;
     line-height: 1.8;
 }
+
+@media (max-width: 1024px) {
+    .timeline-outer {
+        width: 90vw;
+        padding: 30px 0;
+    }
+
+    .timeline-content-block {
+        max-width: 400px;
+        padding: 0 16px;
+    }
+
+    .timeline-bg {
+        padding-bottom: 150px;
+    }
+}
+
 @media (max-width: 900px) {
     .timeline-outer {
         width: 98vw;
@@ -172,6 +189,33 @@ const timeline = [
         padding: 0 8px;
     }
 }
+
+@media (max-width: 768px) {
+    .timeline-bg {
+        padding-bottom: 100px;
+    }
+
+    .timeline-outer {
+        padding: 15px 0;
+    }
+
+    .timeline-row {
+        margin-bottom: 36px;
+    }
+
+    .timeline-year {
+        font-size: 1.8em;
+    }
+
+    .timeline-title {
+        font-size: 1em;
+    }
+
+    .timeline-body {
+        font-size: 0.9em;
+    }
+}
+
 @media (max-width: 600px) {
     .timeline-outer {
         width: 100vw;
@@ -196,6 +240,37 @@ const timeline = [
         text-align: left !important;
         align-self: flex-start !important;
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-bg {
+        padding-bottom: 80px;
+    }
+
+    .timeline-outer {
+        padding: 10px 0;
+    }
+
+    .timeline-row {
+        margin-bottom: 24px;
+    }
+
+    .timeline-year {
+        font-size: 1.6em;
+    }
+
+    .timeline-month {
+        font-size: 1em;
+    }
+
+    .timeline-title {
+        font-size: 0.95em;
+    }
+
+    .timeline-body {
+        font-size: 0.85em;
+        line-height: 1.6;
     }
 }
 </style>

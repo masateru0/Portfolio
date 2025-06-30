@@ -1,5 +1,6 @@
 <template>
     <div
+        class="skill-graph-container"
         :style="{
             width: `${width}px`,
             height: `${height}px`,
@@ -79,3 +80,21 @@ onMounted(() => {
     })
 })
 </script>
+
+<style scoped>
+.skill-graph-container {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .skill-graph-container {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-graph-container {
+        margin: 15px auto;
+    }
+}
+</style>

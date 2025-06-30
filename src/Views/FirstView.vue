@@ -20,4 +20,16 @@
     height: auto;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .img-container {
+        margin-top: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-container {
+        margin-top: 70px;
+    }
+}
 </style>

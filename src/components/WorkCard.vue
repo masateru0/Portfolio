@@ -56,12 +56,50 @@ defineProps({
 .work-title {
     font-weight: bold;
     font-size: 1.1rem;
-    color: #2C2C33;
+    color: #2c2c33;
     margin-bottom: 4px;
 }
 
 .work-description {
-    color: #2C2C33;
+    color: #2c2c33;
     font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .work-card {
+        max-width: 320px;
+    }
+
+    .work-img {
+        width: 320px;
+        height: 216px;
+    }
+
+    .work-title {
+        font-size: 1rem;
+    }
+
+    .work-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-card {
+        max-width: 280px;
+    }
+
+    .work-img {
+        width: 280px;
+        height: 189px;
+    }
+
+    .work-title {
+        font-size: 0.95rem;
+    }
+
+    .work-description {
+        font-size: 0.85rem;
+    }
 }
 </style>
