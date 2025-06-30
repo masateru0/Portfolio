@@ -29,4 +29,8 @@ import ProfileCard from '@/components/ProfileCard.vue'
     display: flex;
     flex-direction: column;
 }
+
+.my-profile :deep(.contents-text) {
+    background-color: #F4FCFD;
+}
 </style>

@@ -19,7 +19,7 @@ defineProps({
     display: flex;
     align-items: center;
     justify-content: left;
-    background-color: #F4FCFD;
+    background-color: #fff;
 }
 
 .bar {
