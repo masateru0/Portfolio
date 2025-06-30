@@ -87,7 +87,7 @@
     </section>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { reactive, computed, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import ContentsText from '@/components/ContentsText.vue'

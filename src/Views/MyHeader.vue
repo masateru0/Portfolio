@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header :class="['header', { scrolled: isScrolled }]">
         <div class="container">
             <div class="left-section">
                 <RouterLink :to="{ name: 'TopPage' }">
@@ -32,8 +32,20 @@
 import CustomButton from '@/components/CustomButton.vue'
 import MyIcon from '@/components/MyIcon.vue'
 import { useRouter } from 'vue-router'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const router = useRouter()
+
+const isScrolled = ref(false)
+const onScroll = () => {
+    isScrolled.value = window.scrollY > 10
+}
+onMounted(() => {
+    window.addEventListener('scroll', onScroll)
+})
+onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll)
+})
 
 const scrollToContact = () => {
     const contactSection = document.getElementById('contact')
@@ -53,6 +65,16 @@ const scrollToContact = () => {
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+.header.scrolled {
+    background-color: rgba(244, 252, 253, 0.85);
+    backdrop-filter: blur(4px);
 }
 
 .container {
@@ -74,7 +96,7 @@ const scrollToContact = () => {
 .logo {
     font-size: 16px;
     font-weight: bold;
-    color: #2C2C33;
+    color: #2c2c33;
     margin-left: 1rem;
     cursor: pointer;
     text-decoration: none;
@@ -92,7 +114,7 @@ const scrollToContact = () => {
 .nav-links a,
 .nav-links .router-link-active {
     text-decoration: none;
-    color: #2C2C33;
+    color: #2c2c33;
     font-weight: 500;
     transition: color 0.3 ease;
     margin-right: 34px;
