@@ -1,5 +1,5 @@
 <template>
-    <section class="works-section">
+    <section id="works" class="works-section">
         <div class="works-grid">
             <ContentsText title="Works" class="works-title" />
             <WorkCard
@@ -84,8 +84,16 @@ const works = [
         tag: ['HTML', 'CSS'],
         images: [websiteView, websiteAbout, websiteBlog, websiteContact, websiteFooter],
         links: [
-            { label: 'GitHub', url: 'https://github.com/masateru0/CS-Club-WebSite', icon: 'github' },
-            { label: 'デモサイト', url: 'https://masateru-original-web-site.netlify.app', icon: 'external' },
+            {
+                label: 'GitHub',
+                url: 'https://github.com/masateru0/CS-Club-WebSite',
+                icon: 'github',
+            },
+            {
+                label: 'デモサイト',
+                url: 'https://masateru-original-web-site.netlify.app',
+                icon: 'external',
+            },
         ],
     },
     {
@@ -98,7 +106,11 @@ const works = [
         images: [fortuneView, fortune1, fortune2, fortune3, fortune4],
         links: [
             { label: 'GitHub', url: 'https://github.com/masateru0/fortune-app', icon: 'github' },
-            { label: 'デモサイト', url: 'https://masateru-fortune-app.netlify.app/', icon: 'external' },
+            {
+                label: 'デモサイト',
+                url: 'https://masateru-fortune-app.netlify.app/',
+                icon: 'external',
+            },
         ],
     },
     {
@@ -115,7 +127,11 @@ const works = [
                 url: 'https://github.com/masateru0/quiz-app',
                 icon: 'github',
             },
-            { label: 'デモサイト', url: 'https://masateru-quiz-app.netlify.app/', icon: 'external' },
+            {
+                label: 'デモサイト',
+                url: 'https://masateru-quiz-app.netlify.app/',
+                icon: 'external',
+            },
         ],
     },
     {
@@ -149,7 +165,11 @@ const works = [
         images: [todoView, todo1, todo2, todo3, todo4, todo5],
         links: [
             { label: 'GitHub', url: 'https://github.com/masateru0/ToDo-list-app', icon: 'github' },
-            { label: 'デモサイト', url: 'https://masateru-todo-list-app.netlify.app/', icon: 'external' },
+            {
+                label: 'デモサイト',
+                url: 'https://masateru-todo-list-app.netlify.app/',
+                icon: 'external',
+            },
         ],
     },
     {
@@ -230,7 +250,6 @@ const openDialog = (work) => {
 
 @media (max-width: 1024px) {
     .works-section :deep(.works-title) {
-        margin-left: 50px;
         font-size: 36px;
         margin-bottom: 50px;
     }
@@ -249,15 +268,16 @@ const openDialog = (work) => {
 
 @media (max-width: 768px) {
     .works-section :deep(.works-title) {
-        margin-left: 20px;
         font-size: 32px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         text-align: center;
         justify-content: center;
     }
 
     .works-title {
-        padding-top: 80px;
+        position: relative;
+        top: 0;
+        padding-top: 15px;
     }
 
     .works-grid {
@@ -270,14 +290,15 @@ const openDialog = (work) => {
 
 @media (max-width: 480px) {
     .works-section :deep(.works-title) {
-        margin-left: 15px;
         margin-right: 15px;
         font-size: 28px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
 
     .works-title {
-        padding-top: 60px;
+        position: relative;
+        top: 0;
+        padding-top: 10px;
     }
 
     .works-grid {

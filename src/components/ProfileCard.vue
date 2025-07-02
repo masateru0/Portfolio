@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import profileIcon from '@/assets/profile-icon.png'
+import profileIcon from '@/assets/profile/profile-icon.png'
 </script>
 
 <style scoped>

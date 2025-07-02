@@ -45,11 +45,11 @@ onMounted(() => {
     new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'BootStrap', 'AWS', 'MySQL', 'Git'],
+            labels: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Java', 'AWS', 'MySQL', 'Git'],
             datasets: [
                 {
                     label: '技術スキルレベル',
-                    data: [8, 8, 6, 6, 8, 4, 2, 8],
+                    data: [8, 8, 6, 6, 2, 4, 2, 8],
                     backgroundColor: 'rgba(54, 162, 235, 0.3)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     pointBackgroundColor: 'rgba(54, 162, 235, 1)',

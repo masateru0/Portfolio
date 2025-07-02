@@ -12,7 +12,7 @@
             ・★★★★★（星5）:実務レベル<br />
             　安定して自力で対応可能。人に教えたり、設計・実装を一通り任されるレベル。
         </template>
-        <img src="@/assets/tip.png" alt="tip logo" class="tooltip-img" />
+        <img src="@/assets/skills/tip.png" alt="tip logo" class="tooltip-img" />
     </el-tooltip>
 </template>
 

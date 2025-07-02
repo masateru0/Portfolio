@@ -60,7 +60,7 @@ const skills = [
         title: 'JavaScript',
         icon: new URL('@/assets/skills/js-icon.png', import.meta.url).href,
         description: 'JavaScriptの基礎知識を身につけ、簡単なwebアプリを作れます',
-        rating: 4,
+        rating: 3,
     },
     {
         title: 'BootStrap',
@@ -73,19 +73,25 @@ const skills = [
         icon: new URL('@/assets/skills/vue-icon.png', import.meta.url).href,
         description:
             'Vue.jsの基礎知識を身につけ、コンポーネント設計を意識した簡単でモダンなwebアプリを作れます',
-        rating: 4,
+        rating: 3,
+    },
+    {
+        title: 'Java',
+        icon: new URL('@/assets/skills/Java-icon.png', import.meta.url).href,
+        description: 'Javaの基礎知識を学習中です。',
+        rating: 1,
     },
     {
         title: 'MySQL',
         icon: new URL('@/assets/skills/MySQL-icon.png', import.meta.url).href,
-        description: 'MySQLの基礎知識を身につけ、テーブルの作成・更新・削除などSQL操作ができます',
+        description: 'MySQLの基礎知識を学習中です。',
         rating: 1,
     },
     {
         title: 'AWS',
         icon: new URL('@/assets/skills/AWS-icon.png', import.meta.url).href,
-        description: 'AWSクラウドプラクティショナーを取得しました',
-        rating: 1,
+        description: 'AWSの資格所得に向け学習中です。',
+        rating: 2,
     },
     {
         title: 'Git',
@@ -93,12 +99,7 @@ const skills = [
         description: 'Gitの基礎知識を身につけ、ブランチ管理を行い効率的な開発ができます',
         rating: 4,
     },
-    {
-        title: 'Slack',
-        icon: new URL('@/assets/skills/Slack-icon.png', import.meta.url).href,
-        description: 'Slackを通じてコミュニケーションをとりながら作業ができます',
-        rating: 5,
-    },
+
 ]
 </script>
 

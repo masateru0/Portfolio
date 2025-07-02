@@ -1,7 +1,7 @@
 <template>
     <section class="about-me-section">
         <div class="content">
-            <img class="about-img" src="@/assets/about-me-img.jpg" alt="AboutMe写真" />
+            <img class="about-img" src="@/assets/about/about-me-img.jpg" alt="AboutMe写真" />
 
             <div class="text-block">
                 <ContentsText title="About me" />

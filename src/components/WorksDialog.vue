@@ -107,12 +107,24 @@ const getLinkIcon = (icon) => {
 
 <style>
 .el-overlay-dialog {
-    top: unset !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: fixed !important;
 }
 
 .works-dialog {
     border-radius: 5px;
     padding: 1rem;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
 }
 
 .dialog-content {

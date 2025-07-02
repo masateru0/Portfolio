@@ -1,6 +1,6 @@
 <template>
     <div class="img-container">
-        <img class="first-view-img" src="@/assets/first-view.svg" alt="FirstView" />
+        <img class="first-view-img" src="@/assets/firstView/first-view.svg" alt="FirstView" />
     </div>
 </template>
 
