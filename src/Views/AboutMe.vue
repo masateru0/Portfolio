@@ -55,11 +55,12 @@ import CustomButton from '@/components/CustomButton.vue'
 
 .content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 52px;
-    margin-left: 145px;
-    margin-right: 144px;
+    margin: 0 auto;
     flex-wrap: wrap;
+    max-width: 1200px;
 }
 
 .about-img {

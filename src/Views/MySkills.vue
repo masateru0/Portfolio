@@ -114,12 +114,14 @@ const skills = [
 
 .skill-content {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     padding-top: 150px;
     padding-bottom: 40px;
 }
 
 .skills-left-column {
-    margin-left: 165px;
     width: 585px;
 }
 

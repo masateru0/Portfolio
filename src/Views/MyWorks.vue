@@ -1,7 +1,7 @@
 <template>
     <section class="works-section">
-        <ContentsText title="Works" class="works-title" />
         <div class="works-grid">
+        <ContentsText title="Works" class="works-title" />
             <WorkCard
                 v-for="(work, index) in works"
                 :key="index"
@@ -143,6 +143,10 @@ const openDialog = (work) => {
 }
 </script>
 <style scoped>
+.works-section {
+    position: relative;
+}
+
 .works-section,
 .works-title {
     background-color: #d6f2f8;
@@ -150,17 +154,17 @@ const openDialog = (work) => {
 
 .works-section :deep(.works-title) {
     justify-content: flex-start;
-    text-align: left;
     font-size: 40px;
-    margin-bottom: 71px;
-    margin-left: 151px;
 }
 
 .works-title {
-    padding-top: 117px;
+    position: absolute;
+    left: 0;
+    top: 117px;
 }
 
 .works-grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     gap: 48px 0;
@@ -169,6 +173,7 @@ const openDialog = (work) => {
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 122px;
+    padding-top: 217px;
 }
 
 @media (max-width: 1024px) {
