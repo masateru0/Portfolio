@@ -10,6 +10,19 @@
             <div class="left-column">
                 <LeftContentsText :title="title" class="dialog-title" />
                 <p class="dialog-text">{{ dialogText }}</p>
+                <div class="links" v-if="links && links.length > 0">
+                    <a
+                        v-for="(link, index) in links"
+                        :key="index"
+                        :href="link.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-button"
+                    >
+                        <i :class="getLinkIcon(link.icon)" class="link-icon"></i>
+                        {{ link.label }}
+                    </a>
+                </div>
                 <div class="tags">
                     <MyTag v-for="(tag, index) in tags" :key="index" :label="tag" />
                 </div>
@@ -50,6 +63,7 @@ const props = defineProps({
     image: String,
     tags: Array,
     images: Array,
+    links: Array,
 })
 
 const emit = defineEmits(['update:visible'])
@@ -77,6 +91,17 @@ const handleClose = () => {
 
 const selectImage = (img) => {
     selectedImage.value = img
+}
+
+const getLinkIcon = (icon) => {
+    switch (icon) {
+        case 'github':
+            return 'fab fa-github'
+        case 'external':
+            return 'fas fa-external-link-alt'
+        default:
+            return 'fas fa-link'
+    }
 }
 </script>
 
@@ -120,7 +145,42 @@ const selectImage = (img) => {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: #73d1e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    background-color: #5bb8d1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(115, 209, 232, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.link-icon {
+    font-size: 16px;
 }
 
 .right-column {
@@ -205,6 +265,16 @@ const selectImage = (img) => {
         width: 50px;
         height: 50px;
     }
+
+    .links {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .link-button {
+        padding: 0.5rem 0.75rem;
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -235,6 +305,16 @@ const selectImage = (img) => {
 
     .tags {
         gap: 0.25rem;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .link-button {
+        padding: 0.5rem;
+        font-size: 12px;
     }
 }
 </style>

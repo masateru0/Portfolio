@@ -1,7 +1,7 @@
 <template>
     <section class="works-section">
         <div class="works-grid">
-        <ContentsText title="Works" class="works-title" />
+            <ContentsText title="Works" class="works-title" />
             <WorkCard
                 v-for="(work, index) in works"
                 :key="index"
@@ -18,6 +18,7 @@
             :image="selectedWork.image"
             :tags="selectedWork.tag"
             :images="selectedWork.images"
+            :links="selectedWork.links"
         />
     </section>
 </template>
@@ -73,7 +74,6 @@ import portfolio3 from '@/assets/works/portfolio-3.png'
 import portfolio4 from '@/assets/works/portfolio-4.png'
 import portfolio5 from '@/assets/works/portfolio-5.png'
 
-
 const works = [
     {
         title: 'Webサイト',
@@ -83,6 +83,10 @@ const works = [
         image: webSiteImage,
         tag: ['HTML', 'CSS'],
         images: [websiteView, websiteAbout, websiteBlog, websiteContact, websiteFooter],
+        links: [
+            { label: 'GitHub', url: 'https://github.com/masateru0/CS-Club-WebSite', icon: 'github' },
+            { label: 'デモサイト', url: 'https://masateru-original-web-site.netlify.app', icon: 'external' },
+        ],
     },
     {
         title: '占いアプリ',
@@ -92,42 +96,90 @@ const works = [
         image: fortuneAppImage,
         tag: ['CSS', 'Vue.js'],
         images: [fortuneView, fortune1, fortune2, fortune3, fortune4],
+        links: [
+            { label: 'GitHub', url: 'https://github.com/masateru0/fortune-app', icon: 'github' },
+            { label: 'デモサイト', url: 'https://masateru-fortune-app.netlify.app/', icon: 'external' },
+        ],
     },
     {
-        title: 'クエスチョンアプリ',
+        title: 'クイズアプリ',
         description: 'Cording / Vue.js・BootStrap',
         dialogText:
-            'Vue.js と Bootstrap を使って、4択形式で全10問のクエスチョンアプリを作成しました。コンポーネント設計を意識し、質問文・選択肢・回答処理をそれぞれ分離して管理することで、保守性を高めました。正解・不正解時には即座にフィードバックが表示され、スムーズなユーザー体験を意識して実装しています。また、単純なCSSではなくBootStrap を活用してUI/UXを意識したデザインを心がけました。',
+            'Vue.jsとBootstrapを用いて、4択形式・全10問のクイズアプリを作成しました。コンポーネント設計を意識し、質問文・選択肢・回答処理を分離することで保守性を向上。正解・不正解の即時フィードバックにより、スムーズなユーザー体験を実現しました。UIはCSSではなくBootstrapを活用し、デザイン性と操作性に配慮しています。',
         image: questionAppImage,
         tag: ['Vue.js', 'BootStrap'],
         images: [questionView, question1, question2, question3, question4],
+        links: [
+            {
+                label: 'GitHub',
+                url: 'https://github.com/masateru0/quiz-app',
+                icon: 'github',
+            },
+            { label: 'デモサイト', url: 'https://masateru-quiz-app.netlify.app/', icon: 'external' },
+        ],
     },
     {
         title: '電卓アプリ',
         description: 'Cording / Vue.js・CSS',
         dialogText:
-            'Vue.jsとCSSで作成した電卓アプリでは、コンポーネント設計にこだわりました。表示部とボタン部を分離し、それぞれの役割を明確にすることでコードの可読性と保守性を高めています。ボタンは汎用コンポーネント化し、数字や演算子を動的に扱えるようにしました。また、CSSでボタンのサイズや配置を柔軟に調整し、ユーザー体験を向上させています。さらに、計算処理はVueのリアクティブ機能を活用して即時反映を実現。直感的で使いやすい電卓を目指しました。',
+            'Vue.jsとCSSで電卓アプリを作成し、コンポーネント設計に注力しました。表示部とボタン部を分離し、それぞれの役割を明確化。ボタンは汎用コンポーネント化し、数字や演算子を動的に扱えるよう設計しました。CSSでボタンのサイズや配置を調整し、使いやすさを追求。Vueのリアクティブ機能を活用して、計算結果を即時に反映する直感的な操作性を実現しました。',
         image: calculatorAppImage,
         tag: ['CSS', 'Vue.js'],
         images: [calculatorView, calculator1, calculator2, calculator3, calculator4],
+        links: [
+            {
+                label: 'GitHub',
+                url: 'https://github.com/masateru0/calculator-app',
+                icon: 'github',
+            },
+            {
+                label: 'デモサイト',
+                url: 'https://masateru-calculator-app.netlify.app/',
+                icon: 'external',
+            },
+        ],
     },
     {
         title: 'TODOリスト',
         description: 'Cording / Vue.js・CSS',
         dialogText:
-            'Vue.jsとCSSで作成したTODOリストアプリでは、ユーザーの操作性を重視して設計しました。タスクの追加・削除・編集機能を作成し、入力と画面表示でコンポーネントを分けて実装しています。入力フォームにはバリデーションを実装し、誤入力を防止。また、完了済みタスクの視覚的区別やフィルタリング機能を搭載し、一覧が見やすくなるよう工夫しました。CSSはシンプルかつ直感デザインを心がけ、ボタンやタスクのホバー・クリック時にアニメーションを加えました。さらに、ローカルストレージへの保存機能を実装し、ページを再読み込みしてもタスクが保持されるようにしています。これにより、日常的に使いやすく、快適なTODO管理アプリに仕上げました。',
+            'Vue.jsとCSSで作成したTODOリストアプリは、操作性を重視して設計しました。タスクの追加・削除・編集に対応し、入力フォームと表示を分けて実装。バリデーションで誤入力を防止し、完了タスクの視覚的区別やフィルター機能で見やすさを向上。CSSはシンプルでなデザインにし、ホバー時のアニメーションも加えています。ローカルストレージでデータの永続化も対応しています。',
         image: todoListAppImage,
         tag: ['CSS', 'Vue.js'],
         images: [todoView, todo1, todo2, todo3, todo4, todo5],
+        links: [
+            { label: 'GitHub', url: 'https://github.com/masateru0/ToDo-list-app', icon: 'github' },
+            { label: 'デモサイト', url: 'https://masateru-todo-list-app.netlify.app/', icon: 'external' },
+        ],
     },
     {
         title: 'ポートフォリオサイト',
         description: 'Cording / CSS・Vue.js・ElementPlus',
         dialogText:
-            'Vue.js、CSS、そしてElement Plusを組み合わせたポートフォリオアプリでは、見やすいUI設計にこだわりました。Element Plusの豊富なコンポーネントを活用し、一貫性のあるデザインと操作性を実現。また、コンポーネントの再利用性を意識して設計し、メンテナンス性を向上。アニメーションやホバー効果で視覚的なアクセントを加え、閲覧者に印象的な体験を提供しています。さらに、動的なデータバインディングを活用して、作品情報やスキルを柔軟に管理できるよう工夫しました。',
+            'Vue.js、CSS、Element Plusを用いたポートフォリオアプリでは、見やすく統一感のあるUI設計に注力しました。Element Plusのコンポーネントを活用し操作性を高め、再利用性を意識した設計で保守性も向上。アニメーションやホバー効果で視覚的アクセントを加え、動的なデータバインディングで作品情報やスキルを柔軟に管理できる構成としています。',
         image: portfolioAppImage,
         tag: ['CSS', 'Vue.js', 'ElementPlus'],
-        images: [ portfolioView, portfolioSmartPhoneView, portfolio1, portfolio2, portfolio3, portfolio4, portfolio5 ],
+        images: [
+            portfolioView,
+            portfolioSmartPhoneView,
+            portfolio1,
+            portfolio2,
+            portfolio3,
+            portfolio4,
+            portfolio5,
+        ],
+        links: [
+            {
+                label: 'GitHub',
+                url: 'https://github.com/masateru0/Portfolio',
+                icon: 'github',
+            },
+            {
+                label: 'デモサイト',
+                url: 'https://masateru-portfolio-site.netlify.app/',
+                icon: 'external',
+            },
+        ],
     },
 ]
 const dialogVisible = ref(false)
@@ -136,6 +188,7 @@ const selectedWork = ref({
     description: '',
     image: '',
     tag: [],
+    links: [],
 })
 const openDialog = (work) => {
     selectedWork.value = { ...work }
@@ -146,7 +199,6 @@ const openDialog = (work) => {
 .works-section {
     position: relative;
 }
-
 .works-section,
 .works-title {
     background-color: #d6f2f8;
